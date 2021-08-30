@@ -1294,7 +1294,7 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: 14px;
+  --global-font-size: 0.75rem;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #d2ebfd;
