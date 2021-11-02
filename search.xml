@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>域认证协议</title>
+      <link href="/2021/11/02/%E5%9F%9F%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/"/>
+      <url>/2021/11/02/%E5%9F%9F%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/</url>
+      
+        <content type="html"><![CDATA[<h2 id="NTLM"><a href="#NTLM" class="headerlink" title="NTLM"></a>NTLM</h2><h3 id="NTLM简介"><a href="#NTLM简介" class="headerlink" title="NTLM简介"></a>NTLM简介</h3><p>NTLM使用在Windows NT和Windows 2000 Server（or later）工作组环境中（Kerberos用在域模式下）。在AD域环境中，如果需要认证Windows NT系统，也必须采用NTLM。较之Kerberos，基于NTLM的认证过程要简单很多。NTLM采用一种质询/应答（Challenge/Response）消息交换模式。<br>NTLM协议的认证， 包括 NTLMv1  和 NTLMv2 两个版本。  涉及到NTLM的认证全过程，以及NTLM 的 EPA（Extended Protection for Authentication）实现。<br>在本地登录Windows的情况下，操作系统会使用用户输入的密码作为凭证去与系统中的密码进行验证，操作系统中的密码存储在 <code>%SystemRoot%\system32\config\sam</code><br>当我们登录系统的时候,系统会自动地读取SAM文件中的“密码”与我们输入的“密码”进行比对，如果相同，证明认证成功。<br>这个SAM文件中保留了计算机本地所有用户的凭证信息，可以理解为是一个数据库。<br>Windows本身不保存明文密码，只保留密码的Hash。</p><p>ntlm认证大致流程:</p><p><strong>winlogon.exe -&gt; 接收用户输入 -&gt; lsass.exe -&gt; (认证)</strong></p><p>关于NTLM Hash与NTLM<br>在Windows中，密码Hash目前称之为NTLM Hash，其中NTLM全称是：“NT LAN Manager”。<br>这个NTLM是一种网络认证协议，与NTLM Hash的关系就是：NTLM网络认证协议是以NTLM Hash作为根本凭证进行认证的协议。<br>在本地认证的过程中，其实就是将用户输入的密码转换为NTLM Hash与SAM中的NTLM Hash进行比较。</p><h3 id="NTLM协议"><a href="#NTLM协议" class="headerlink" title="NTLM协议"></a>NTLM协议</h3><p>NTLM是一种网络认证协议，它是基于挑战（Chalenge）/响应（Response）认证机制的一种认证模式。<br>这个协议只支持Windows<br>NTLM协议的认证过程分为三步：</p><ol><li>协商</li><li>质询</li><li>验证</li></ol><p>协商：主要用于确认双方协议版本<br>质询：就是挑战（Chalenge）/响应（Response）认证机制起作用的范畴。<br>验证：验证主要是在质询完成后，验证结果，是认证的最后一步。</p><p>质询的完整过程：</p><ol><li>客户端向服务器端发送用户信息(用户名)请求</li><li>服务器接受到请求，判断本地账户列 表是否有用户名，如果有，生成一个16位的随机数，被称之为“Challenge”， 使用登录用户名对应的NTLM Hash加密Challenge(16位随机字符)， 生成Challenge1。生成一 个Net-NTLM Hash存在内存中，同时，生成Challenge1后，将Challenge(16位随机 字符)发送给客户端。</li><li>客户端接受到Challenge后，使用将要登录到账户对应的NTLM Hash加密Challenge生成Response，然后将Response发送至服务器端。</li></ol><p>其中，经过NTLM Hash加密Challenge的结果在网络协议中称之为Net NTLM Hash。<br>验证： 服务器端收到客户端的Response后，比对Chanllenge1与Response是否相等，若相等，则认证通过。</p><h2 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h2><blockquote><p>Kerberos 是一种网络认证协议，其设计目标是通过密钥系统为客户机/服务器应用程序 提供强大的认证服务。该认证过程的实现不依赖于主机操作系统的认证，无需基于主机地址 的信任，不要求网络上所有主机的物理安全，并假定网络上传送的数据包可以被任意的读取、 修改和插入数据。在以上情况下，Kerberos 作为一种可信任的第三方认证服务，是通过传统的密码技术(如:共享密钥)执行认证服务的。</p></blockquote><p>Kerberos 协议中主要有三个角色:</p><ul><li>访问服务的 Client</li><li>提供服务的 Server</li><li>KDC(Key Distribution Center)密钥分发中心</li></ul><p><img src="https://i.loli.net/2021/11/02/cbhyQkTpjDRnUqv.png"><br>如图中显示的，步骤主要分三个来回认证步骤：</p><blockquote><p>K(c,tgs)：session_key(client与tgs之间的通信)<br>K(c,s)：session_key(client与server之间的通信)</p></blockquote><p>步骤一：Client –〉DC（KDC（as））；客户端向认证服务器（AS）发送一个认证请求（KRB_AS_REQ）。</p><blockquote><p>发送内容① ：[Pre-authentication data（client is ntlm_hash for Timestamp）,Client name &amp; realm（DomainName\Username）,Server Name（KDC TGS NAME）]</p></blockquote><p>步骤二：DC（KDC（as）） –〉Client ；认证服务器（AS）认证通过后（对比用户名是否在本地数据库中），给客户端发送加密后的Session Key和TGT凭证（KRB_AS_REP）。Session_key = K(c,tgs)</p><blockquote><p>发送内容②：[Client_ntlm_hash(K(c,tgs))],[Krbtgt_ntlm_hash(k(c,tgs),Client_name(DomainName\Username),TGT_EndTime)]</p></blockquote><p>步骤三：Client –〉DC（KDC（tgs））；客户端拿着自己加密的Session_key和TGT凭证向票据生成服务器（TGS）发起一个认证请求（KRB_TGS_REQ）。</p><blockquote><p>发送内容③ ：[Session_key(Authenticator（[DomainName\Username,ServerName(DomainName\Server)]）)],[TGT]</p></blockquote><p>步骤四：DC（KDC（tgs）） –〉Client ；票据生成服务器（TGS）认证通过后，给客户端发送加密后的Session_key和ticket票据（KRB_TGS_REP）。Session_key = K(c,s)</p><blockquote><p>发送内容④ ：k(c,tgs)加密[Session_key],[Server_ntlm_hash(Tiket（K(c,s),Client_Name(domainName\Username),TGT_EndTime）)]</p></blockquote><p>步骤五：Client –〉Server ；客户端拿着自己加密的Session_key和ticket票据，去访问服务器（无双向认证的话，认证通过后， 即可访问，若双向认证，认证通过后继续走到步骤六）。</p><blockquote><p>发送内容⑤：K(c,s)加密[Authenticator（[DomainName\Username,ServerName(DomainName\Server)]）],[Tiket]</p></blockquote><p>步骤六：Server–〉Client ；服务器认证通过后，放行，并且给客户端发送一个加密的Authenticator，用于让客户端识别是否访问正确的服务端。</p><blockquote><p>发送内容⑥：K(c,s)加密[Authenticator]</p></blockquote><p>相对于ntlm而言,kerberos的认证方式就要复杂的多,因为它提供了一个<strong>集中式</strong>的认证方式,在整个认证过程中总共要涉及到三方:客户端、服务端和KDC，<strong>在Windows域环境中,KDC的角色常常由DC(Domain Controller)来担任</strong>,Kerberos是一种<strong>基于票据的认证方式</strong>,票据(Ticket)是用来安全的在认证服务器和用户请求的服务之间传递用户的身份,同时也会传递一些附加信息,用来保证使用Ticket的用户必须是Ticket中指定的用户,<strong>Ticket一旦生成,在生存时间内可以被Client多次使用来申请同一个Server的服务(票据窃取问题)</strong><br><strong>注：这里面涉及到的一些名词缩写</strong></p><ul><li>KDC(Key Distribution Center):密钥分发中心，里面包含两个服务：AS和TGS</li><li>AS(Authentication Server):身份认证服务</li><li>TGT(Ticket Granting Ticket):由身份认证服务授予的票据**(黄金票据)**，用于身份认证，存储在内存</li><li>TGS(Ticket Granting Server):票据授予服务,<strong>该服务提供的票据也称为 TGS 或者叫白银票据</strong></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 域 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>域控-信息收集</title>
       <link href="/2021/09/16/%E5%9F%9F%E6%8E%A7-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
       <url>/2021/09/16/%E5%9F%9F%E6%8E%A7-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
