@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>808Mak1r</title>
+  <icon>https://808mak1r.com/icon.png</icon>
+  
+  <link href="https://808mak1r.com/atom.xml" rel="self"/>
+  
+  <link href="https://808mak1r.com/"/>
+  <updated>2022-03-10T07:44:55.271Z</updated>
+  <id>https://808mak1r.com/</id>
+  
+  <author>
+    <name>808Mak1r</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2019-12937 ToaruOS权限提升分析</title>
+    <link href="https://808mak1r.com/2022/03/10/CVE-2019-12937ToaruOS%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%E5%88%86%E6%9E%90/"/>
+    <id>https://808mak1r.com/2022/03/10/CVE-2019-12937ToaruOS%E6%9D%83%E9%99%90%E6%8F%90%E5%8D%87%E5%88%86%E6%9E%90/</id>
+    <published>2022-03-10T07:24:33.000Z</published>
+    <updated>2022-03-10T07:44:55.271Z</updated>
+    
+    
+    <summary type="html">CVE-2019-12937 ToaruOS权限提升分析</summary>
+    
+    
+    
+    <category term="漏洞分析" scheme="https://808mak1r.com/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="漏洞分析" scheme="https://808mak1r.com/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域认证协议</title>
+    <link href="https://808mak1r.com/2021/11/02/%E5%9F%9F%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/"/>
+    <id>https://808mak1r.com/2021/11/02/%E5%9F%9F%E8%AE%A4%E8%AF%81%E5%8D%8F%E8%AE%AE/</id>
+    <published>2021-11-02T06:30:00.000Z</published>
+    <updated>2021-11-02T06:30:34.045Z</updated>
+    
+    
+    <summary type="html">Kali 安装 Parallels Tools</summary>
+    
+    
+    
+    
+    <category term="域" scheme="https://808mak1r.com/tags/%E5%9F%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域控-信息收集</title>
+    <link href="https://808mak1r.com/2021/09/16/%E5%9F%9F%E6%8E%A7-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    <id>https://808mak1r.com/2021/09/16/%E5%9F%9F%E6%8E%A7-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</id>
+    <published>2021-09-16T03:00:00.000Z</published>
+    <updated>2021-09-16T02:57:22.072Z</updated>
+    
+    
+    <summary type="html">域控的信息收集</summary>
+    
+    
+    
+    <category term="域" scheme="https://808mak1r.com/categories/%E5%9F%9F/"/>
+    
+    
+    <category term="域控,域,信息收集" scheme="https://808mak1r.com/tags/%E5%9F%9F%E6%8E%A7-%E5%9F%9F-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>域控-概念</title>
+    <link href="https://808mak1r.com/2021/09/16/%E5%9F%9F%E6%8E%A7-%E6%A6%82%E5%BF%B5/"/>
+    <id>https://808mak1r.com/2021/09/16/%E5%9F%9F%E6%8E%A7-%E6%A6%82%E5%BF%B5/</id>
+    <published>2021-09-16T02:30:00.000Z</published>
+    <updated>2021-09-16T02:51:41.307Z</updated>
+    
+    
+    <summary type="html">域控的概念介绍</summary>
+    
+    
+    
+    <category term="域" scheme="https://808mak1r.com/categories/%E5%9F%9F/"/>
+    
+    
+    <category term="域控,域,概念" scheme="https://808mak1r.com/tags/%E5%9F%9F%E6%8E%A7-%E5%9F%9F-%E6%A6%82%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flash 钓鱼</title>
+    <link href="https://808mak1r.com/2021/09/15/Flash%E9%92%93%E9%B1%BC/"/>
+    <id>https://808mak1r.com/2021/09/15/Flash%E9%92%93%E9%B1%BC/</id>
+    <published>2021-09-15T02:30:00.000Z</published>
+    <updated>2021-09-16T02:48:07.501Z</updated>
+    
+    
+    <summary type="html">制作自解压flash钓鱼</summary>
+    
+    
+    
+    <category term="钓鱼" scheme="https://808mak1r.com/categories/%E9%92%93%E9%B1%BC/"/>
+    
+    
+    <category term="钓鱼,flash" scheme="https://808mak1r.com/tags/%E9%92%93%E9%B1%BC-flash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Kali 安装 Parallels Tools</title>
+    <link href="https://808mak1r.com/2021/08/30/Kali%20%E5%AE%89%E8%A3%85%20Parallels%20Tools/"/>
+    <id>https://808mak1r.com/2021/08/30/Kali%20%E5%AE%89%E8%A3%85%20Parallels%20Tools/</id>
+    <published>2021-08-30T02:30:00.000Z</published>
+    <updated>2021-08-30T04:32:51.192Z</updated>
+    
+    
+    <summary type="html">Kali 安装 Parallels Tools</summary>
+    
+    
+    
+    
+    <category term="kali" scheme="https://808mak1r.com/tags/kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>内网穿透--ABPTTS正向代理cs上线</title>
+    <link href="https://808mak1r.com/2021/01/04/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F--ABPTTS%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/"/>
+    <id>https://808mak1r.com/2021/01/04/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F--ABPTTS%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86cs%E4%B8%8A%E7%BA%BF/</id>
+    <published>2021-01-04T01:05:03.000Z</published>
+    <updated>2021-08-25T08:28:35.146Z</updated>
+    
+    
+    <summary type="html">内网穿透--ABPTTS正向代理cs上线</summary>
+    
+    
+    
+    <category term="渗透" scheme="https://808mak1r.com/categories/%E6%B8%97%E9%80%8F/"/>
+    
+    <category term="内网" scheme="https://808mak1r.com/categories/%E6%B8%97%E9%80%8F/%E5%86%85%E7%BD%91/"/>
+    
+    
+    <category term="内网" scheme="https://808mak1r.com/tags/%E5%86%85%E7%BD%91/"/>
+    
+    <category term="CS" scheme="https://808mak1r.com/tags/CS/"/>
+    
+    <category term="内网穿透" scheme="https://808mak1r.com/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+    <category term="正向代理" scheme="https://808mak1r.com/tags/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>试着去理解虚拟DOM</title>
+    <link href="https://808mak1r.com/2019/08/20/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9FDOM/"/>
+    <id>https://808mak1r.com/2019/08/20/%E8%AF%95%E7%9D%80%E5%8E%BB%E7%90%86%E8%A7%A3%E8%99%9A%E6%8B%9FDOM/</id>
+    <published>2019-08-20T09:57:12.000Z</published>
+    <updated>2021-08-25T07:11:37.558Z</updated>
+    
+    
+    <summary type="html">试着去理解虚拟DOM</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cookie是什么</title>
+    <link href="https://808mak1r.com/2019/07/05/Cookie%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://808mak1r.com/2019/07/05/Cookie%E6%98%AF%E4%BB%80%E4%B9%88/</id>
+    <published>2019-07-04T16:00:00.000Z</published>
+    <updated>2021-08-25T07:11:51.055Z</updated>
+    
+    
+    <summary type="html">Cookie是什么</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS高级基础知识小结</title>
+    <link href="https://808mak1r.com/2019/06/29/JS%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/"/>
+    <id>https://808mak1r.com/2019/06/29/JS%E9%AB%98%E7%BA%A7%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</id>
+    <published>2019-06-29T07:31:03.000Z</published>
+    <updated>2021-08-25T07:12:11.699Z</updated>
+    
+    
+    <summary type="html">JS高级基础知识小结</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端知识小结</title>
+    <link href="https://808mak1r.com/2019/06/06/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/"/>
+    <id>https://808mak1r.com/2019/06/06/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/</id>
+    <published>2019-06-06T09:35:48.000Z</published>
+    <updated>2021-08-25T07:11:28.618Z</updated>
+    
+    
+    <summary type="html">前端知识小结</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>自己写一个简版jQuery</title>
+    <link href="https://808mak1r.com/2019/04/24/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jQuery/"/>
+    <id>https://808mak1r.com/2019/04/24/%E8%87%AA%E5%B7%B1%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E7%89%88jQuery/</id>
+    <published>2019-04-24T10:49:36.000Z</published>
+    <updated>2021-08-25T07:11:46.181Z</updated>
+    
+    
+    <summary type="html">自己写一个简版jQuery</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS函数的五种声明方式</title>
+    <link href="https://808mak1r.com/2019/04/17/JS%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/"/>
+    <id>https://808mak1r.com/2019/04/17/JS%E5%87%BD%E6%95%B0%E7%9A%84%E4%BA%94%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/</id>
+    <published>2019-04-17T09:58:27.000Z</published>
+    <updated>2021-08-25T07:12:15.930Z</updated>
+    
+    
+    <summary type="html">JS函数的五种声明方式</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS的数组与伪数组的区别</title>
+    <link href="https://808mak1r.com/2019/04/13/JS%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://808mak1r.com/2019/04/13/JS%E7%9A%84%E6%95%B0%E7%BB%84%E4%B8%8E%E4%BC%AA%E6%95%B0%E7%BB%84%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2019-04-13T09:28:10.000Z</published>
+    <updated>2021-08-25T07:12:07.125Z</updated>
+    
+    
+    <summary type="html">JS的数组与伪数组的区别</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见DOM以及API总结</title>
+    <link href="https://808mak1r.com/2019/04/12/%E5%B8%B8%E8%A7%81DOM%E4%BB%A5%E5%8F%8AAPI%E6%80%BB%E7%BB%93/"/>
+    <id>https://808mak1r.com/2019/04/12/%E5%B8%B8%E8%A7%81DOM%E4%BB%A5%E5%8F%8AAPI%E6%80%BB%E7%BB%93/</id>
+    <published>2019-04-12T02:41:20.000Z</published>
+    <updated>2021-08-25T07:11:18.070Z</updated>
+    
+    
+    <summary type="html">常见DOM以及API总结</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型与原型链</title>
+    <link href="https://808mak1r.com/2019/04/06/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    <id>https://808mak1r.com/2019/04/06/%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%8E%9F%E5%9E%8B%E9%93%BE/</id>
+    <published>2019-04-06T11:12:56.000Z</published>
+    <updated>2021-08-25T07:11:41.439Z</updated>
+    
+    
+    <summary type="html">原型与原型链</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS数组API运用相关代码总结</title>
+    <link href="https://808mak1r.com/2019/04/05/JS%E6%95%B0%E7%BB%84API%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/"/>
+    <id>https://808mak1r.com/2019/04/05/JS%E6%95%B0%E7%BB%84API%E8%BF%90%E7%94%A8%E7%9B%B8%E5%85%B3%E4%BB%A3%E7%A0%81%E6%80%BB%E7%BB%93/</id>
+    <published>2019-04-05T11:13:22.000Z</published>
+    <updated>2021-08-25T07:12:28.610Z</updated>
+    
+    
+    <summary type="html">JS数组API运用相关代码总结</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS里的数据类型转换</title>
+    <link href="https://808mak1r.com/2019/04/04/JS%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://808mak1r.com/2019/04/04/JS%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/</id>
+    <published>2019-04-04T11:52:50.000Z</published>
+    <updated>2021-08-25T07:12:24.115Z</updated>
+    
+    
+    <summary type="html">JS里的数据类型转换</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS里的数据类型</title>
+    <link href="https://808mak1r.com/2019/04/03/JS%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://808mak1r.com/2019/04/03/JS%E9%87%8C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</id>
+    <published>2019-04-03T10:42:20.000Z</published>
+    <updated>2021-08-25T07:12:19.881Z</updated>
+    
+    
+    <summary type="html">JS里的数据类型</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS布局</title>
+    <link href="https://808mak1r.com/2019/03/20/CSS%E5%B8%83%E5%B1%80/"/>
+    <id>https://808mak1r.com/2019/03/20/CSS%E5%B8%83%E5%B1%80/</id>
+    <published>2019-03-20T12:53:01.000Z</published>
+    <updated>2021-08-25T07:11:55.377Z</updated>
+    
+    
+    <summary type="html">CSS布局</summary>
+    
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+</feed>
