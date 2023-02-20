@@ -1,0 +1,13 @@
+# robots.txt
+User-agent: *
+Allow: /
+
+Disallow: /img/
+Disallow: /css/
+Disallow: /js/
+Disallow: /photos/
+Disallow: /*.css
+Disallow: /*.js
+
+Sitemap: https://808mak1r.com/sitemap.xml
+Sitemap: https://808mak1r.com/baidusitemap.xml

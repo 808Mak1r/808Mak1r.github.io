@@ -318,27 +318,6 @@
   </url>
   
   <url>
-    <loc>https://808mak1r.com/tags/Linux/</loc>
-    <lastmod>2023-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://808mak1r.com/tags/Linux%E6%8F%90%E6%9D%83/</loc>
-    <lastmod>2023-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://808mak1r.com/tags/%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8/</loc>
-    <lastmod>2023-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://808mak1r.com/tags/k8s/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -382,6 +361,27 @@
   
   <url>
     <loc>https://808mak1r.com/tags/Kali/</loc>
+    <lastmod>2023-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/tags/Linux/</loc>
+    <lastmod>2023-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/tags/Linux%E6%8F%90%E6%9D%83/</loc>
+    <lastmod>2023-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/tags/%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -481,13 +481,6 @@
   </url>
   
   <url>
-    <loc>https://808mak1r.com/categories/Linux/</loc>
-    <lastmod>2023-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -495,7 +488,14 @@
   </url>
   
   <url>
-    <loc>https://808mak1r.com/categories/Linux/Linux%E6%8F%90%E6%9D%83/</loc>
+    <loc>https://808mak1r.com/categories/Linux/</loc>
+    <lastmod>2023-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/Kubernetes/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -509,7 +509,7 @@
   </url>
   
   <url>
-    <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/Kubernetes/</loc>
+    <loc>https://808mak1r.com/categories/Linux/Linux%E6%8F%90%E6%9D%83/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
