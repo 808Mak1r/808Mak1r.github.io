@@ -318,6 +318,20 @@
   </url>
   
   <url>
+    <loc>https://808mak1r.com/tags/Mac/</loc>
+    <lastmod>2023-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/tags/Kali/</loc>
+    <lastmod>2023-02-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://808mak1r.com/tags/k8s/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -347,20 +361,6 @@
   
   <url>
     <loc>https://808mak1r.com/tags/RBAC/</loc>
-    <lastmod>2023-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://808mak1r.com/tags/Mac/</loc>
-    <lastmod>2023-02-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://808mak1r.com/tags/Kali/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -495,14 +495,14 @@
   </url>
   
   <url>
-    <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/Kubernetes/</loc>
+    <loc>https://808mak1r.com/categories/%E6%B8%97%E9%80%8F/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://808mak1r.com/categories/%E6%B8%97%E9%80%8F/</loc>
+    <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/Kubernetes/</loc>
     <lastmod>2023-02-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
