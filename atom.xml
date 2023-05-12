@@ -6,7 +6,7 @@
   <link href="https://808mak1r.com/atom.xml" rel="self"/>
   
   <link href="https://808mak1r.com/"/>
-  <updated>2023-02-18T09:18:15.430Z</updated>
+  <updated>2023-05-12T05:39:51.930Z</updated>
   <id>https://808mak1r.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>cobaltstrike-beacon-rust测试与修改</title>
+    <link href="https://808mak1r.com/posts/19d1f7ce/"/>
+    <id>https://808mak1r.com/posts/19d1f7ce/</id>
+    <published>2023-05-12T04:30:00.000Z</published>
+    <updated>2023-05-12T05:39:51.930Z</updated>
+    
+    
+    <summary type="html">cobaltstrike-beacon-rust测试与修改实现全平台上线</summary>
+    
+    
+    
+    <category term="后渗透" scheme="https://808mak1r.com/categories/%E5%90%8E%E6%B8%97%E9%80%8F/"/>
+    
+    
+    <category term="后渗透" scheme="https://808mak1r.com/tags/%E5%90%8E%E6%B8%97%E9%80%8F/"/>
+    
+    <category term="持久化" scheme="https://808mak1r.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
     <title>K8S API访问控制之RBAC利用</title>
     <link href="https://808mak1r.com/posts/836b7920/"/>
     <id>https://808mak1r.com/posts/836b7920/</id>
     <published>2023-01-16T08:30:00.000Z</published>
-    <updated>2023-02-18T09:18:15.430Z</updated>
+    <updated>2023-02-20T07:22:41.021Z</updated>
     
     
     <summary type="html">获取k8s的Cluster Admin权限后的横向节点与持久化探索</summary>
@@ -50,7 +71,7 @@
     <link href="https://808mak1r.com/posts/68261434/"/>
     <id>https://808mak1r.com/posts/68261434/</id>
     <published>2023-01-08T11:30:00.000Z</published>
-    <updated>2023-02-18T09:18:15.431Z</updated>
+    <updated>2023-02-20T07:27:16.450Z</updated>
     
     
     <summary type="html">获取k8s的Cluster Admin权限后的横向节点与持久化探索</summary>
@@ -93,11 +114,11 @@
     
     <category term="云原生" scheme="https://808mak1r.com/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
     
-    <category term="横向" scheme="https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/"/>
-    
     <category term="后渗透" scheme="https://808mak1r.com/tags/%E5%90%8E%E6%B8%97%E9%80%8F/"/>
     
     <category term="持久化" scheme="https://808mak1r.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    
+    <category term="横向" scheme="https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/"/>
     
   </entry>
   
@@ -409,25 +430,6 @@
     
     
     <summary type="html">原型与原型链</summary>
-    
-    
-    
-    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JS数组API运用相关代码总结</title>
-    <link href="https://808mak1r.com/posts/c07d50bb/"/>
-    <id>https://808mak1r.com/posts/c07d50bb/</id>
-    <published>2019-04-05T11:13:22.000Z</published>
-    <updated>2023-02-18T09:18:15.420Z</updated>
-    
-    
-    <summary type="html">JS数组API运用相关代码总结</summary>
     
     
     

