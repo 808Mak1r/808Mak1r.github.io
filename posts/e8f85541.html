@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>原型与原型链 | 808Mak1r</title><meta name="author" content="808Mak1r"><meta name="copyright" content="808Mak1r"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="原型与原型链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型与原型链">
+<meta property="og:url" content="https://808mak1r.com/posts/e8f85541.html">
+<meta property="og:site_name" content="808Mak1r">
+<meta property="og:description" content="原型与原型链">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://808mak1r.com/img/avatar.png">
+<meta property="article:published_time" content="2019-04-06T11:12:56.000Z">
+<meta property="article:modified_time" content="2023-02-18T09:18:15.436Z">
+<meta property="article:author" content="808Mak1r">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://808mak1r.com/img/avatar.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://808mak1r.com/posts/e8f85541.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><meta name="baidu-site-verification" content="codeva-oJtCWGvnfW"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8167737ca82fde3fd44496e0be15d1c9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '原型与原型链',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-02-18 17:18:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="808Mak1r" type="application/atom+xml">
+</head><body><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img.png')"><nav id="nav"><span id="blog-info"><a href="/" title="808Mak1r"><span class="site-name">808Mak1r</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">原型与原型链</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-04-06T11:12:56.000Z" title="发表于 2019-04-06 19:12:56">2019-04-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-02-18T09:18:15.436Z" title="更新于 2023-02-18 17:18:15">2023-02-18</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>15分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><strong>再讲原型与原型链的前提下先讲些概念方便理解</strong></p>
+<hr>
+<h1 id="对象是什么"><a href="#对象是什么" class="headerlink" title="对象是什么"></a>对象是什么</h1><p>面向对象编程（Object Oriented Programming，缩写为 OOP）是目前主流的编程范式。它将真实世界各种复杂的关系，抽象为一个个对象，然后由对象之间的分工与合作，完成对真实世界的模拟。</p>
+<p>每一个对象都是功能中心，具有明确分工，可以完成接受信息、处理数据、发出信息等任务。对象可以复用，通过继承机制还可以定制。因此，面向对象编程具有灵活、代码可复用、高度模块化等特点，容易维护和开发，比起由一系列函数或指令组成的传统的过程式编程（procedural programming），更适合多人合作的大型软件项目。</p>
+<p>那么，“对象”（object）到底是什么？我们从两个层次来理解。</p>
+<p>（1）对象是单个实物的抽象。</p>
+<p>一本书、一辆汽车、一个人都可以是对象，一个数据库、一张网页、一个与远程服务器的连接也可以是对象。当实物被抽象成对象，实物之间的关系就变成了对象之间的关系，从而就可以模拟现实情况，针对对象进行编程。</p>
+<p>（2）对象是一个容器，封装了属性（property）和方法（method）。</p>
+<p>属性是对象的状态，方法是对象的行为（完成某种任务）。比如，我们可以把动物抽象为animal对象，使用“属性”记录具体是那一种动物，使用“方法”表示动物的某种行为（奔跑、捕猎、休息等等）。</p>
+<h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><p>面向对象编程的第一步，就是要生成对象。前面说过，对象是单个实物的抽象。通常需要一个模板，表示某一类实物的共同特征，然后对象根据这个模板生成。</p>
+<p>典型的面向对象编程语言（比如 C++ 和 Java），都有“类”（class）这个概念。所谓“类”就是对象的模板，对象就是“类”的实例。但是，JavaScript 语言的对象体系，不是基于“类”的，而是基于构造函数（constructor）和原型链（prototype）。</p>
+<p>JavaScript 语言使用构造函数（constructor）作为对象的模板。所谓”构造函数”，就是专门用来生成实例对象的函数。它就是对象的模板，描述实例对象的基本结构。一个构造函数，可以生成多个实例对象，这些实例对象都有相同的结构。</p>
+<p>构造函数就是一个普通的函数，但是有自己的特征和用法。</p>
+<p>var Vehicle &#x3D; function () {<br>  this.price &#x3D; 1000;<br>};<br>上面代码中，Vehicle就是构造函数。为了与普通函数区别，构造函数名字的第一个字母通常大写。</p>
+<p>构造函数的特点有两个。</p>
+<p>函数体内部使用了this关键字，代表了所要生成的对象实例。<br>生成对象的时候，必须使用new命令。<br>下面先介绍new命令。</p>
+<h2 id="new-命令"><a href="#new-命令" class="headerlink" title="new 命令"></a>new 命令</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>new命令的作用，就是执行构造函数，返回一个实例对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Vehicle = function () &#123;</span><br><span class="line">  this.price = 1000;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var v = new Vehicle();</span><br><span class="line">v.price // 1000</span><br></pre></td></tr></table></figure>
+<p>上面代码通过new命令，让构造函数Vehicle生成一个实例对象，保存在变量v中。这个新生成的实例对象，从构造函数Vehicle得到了price属性。new命令执行时，构造函数内部的this，就代表了新生成的实例对象，this.price表示实例对象有一个price属性，值是1000。</p>
+<p>使用new命令时，根据需要，构造函数也可以接受参数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var Vehicle = function (p) &#123;</span><br><span class="line">  this.price = p;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>var v &#x3D; new Vehicle(500);<br>new命令本身就可以执行构造函数，所以后面的构造函数可以带括号，也可以不带括号。下面两行代码是等价的，但是为了表示这里是函数调用，推荐使用括号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 推荐的写法</span><br><span class="line">var v = new Vehicle();</span><br><span class="line">// 不推荐的写法</span><br><span class="line">var v = new Vehicle;</span><br></pre></td></tr></table></figure>
+<p>一个很自然的问题是，如果忘了使用new命令，直接调用构造函数会发生什么事？</p>
+<p>这种情况下，构造函数就变成了普通函数，并不会生成实例对象。而且由于后面会说到的原因，this这时代表全局对象，将造成一些意想不到的结果。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var Vehicle = function ()&#123;</span><br><span class="line">  this.price = 1000;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var v = Vehicle();</span><br><span class="line">v // undefined</span><br><span class="line">price // 1000</span><br></pre></td></tr></table></figure>
+<p>上面代码中，调用Vehicle构造函数时，忘了加上new命令。结果，变量v变成了undefined，而price属性变成了全局变量。因此，应该非常小心，避免不使用new命令、直接调用构造函数。</p>
+<p>为了保证构造函数必须与new命令一起使用，一个解决办法是，构造函数内部使用严格模式，即第一行加上use strict。这样的话，一旦忘了使用new命令，直接调用构造函数就会报错。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Fubar(foo, bar)&#123;</span><br><span class="line">  &#x27;use strict&#x27;;</span><br><span class="line">  this._foo = foo;</span><br><span class="line">  this._bar = bar;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fubar()</span><br><span class="line">// TypeError: Cannot set property &#x27;_foo&#x27; of undefined</span><br></pre></td></tr></table></figure>
+<p>上面代码的Fubar为构造函数，use strict命令保证了该函数在严格模式下运行。由于严格模式中，函数内部的this不能指向全局对象，默认等于undefined，导致不加new调用会报错（JavaScript 不允许对undefined添加属性）。</p>
+<p>另一个解决办法，构造函数内部判断是否使用new命令，如果发现没有使用，则直接返回一个实例对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Fubar(foo, bar) &#123;</span><br><span class="line">  if (!(this instanceof Fubar)) &#123;</span><br><span class="line">    return new Fubar(foo, bar);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this._foo = foo;</span><br><span class="line">  this._bar = bar;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Fubar(1, 2)._foo // 1</span><br><span class="line">(new Fubar(1, 2))._foo // 1</span><br></pre></td></tr></table></figure>
+<p>上面代码中的构造函数，不管加不加new命令，都会得到同样的结果。</p>
+<h3 id="new-命令的原理"><a href="#new-命令的原理" class="headerlink" title="new 命令的原理"></a>new 命令的原理</h3><p>使用new命令时，它后面的函数依次执行下面的步骤。</p>
+<p>创建一个空对象，作为将要返回的对象实例。<br>将这个空对象的原型，指向构造函数的prototype属性。<br>将这个空对象赋值给函数内部的this关键字。<br>开始执行构造函数内部的代码。<br>也就是说，构造函数内部，this指的是一个新生成的空对象，所有针对this的操作，都会发生在这个空对象上。构造函数之所以叫“构造函数”，就是说这个函数的目的，就是操作一个空对象（即this对象），将其“构造”为需要的样子。</p>
+<p>如果构造函数内部有return语句，而且return后面跟着一个对象，new命令会返回return语句指定的对象；否则，就会不管return语句，返回this对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var Vehicle = function () &#123;</span><br><span class="line">  this.price = 1000;</span><br><span class="line">  return 1000;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(new Vehicle()) === 1000</span><br><span class="line">// false</span><br></pre></td></tr></table></figure>
+<p>上面代码中，构造函数Vehicle的return语句返回一个数值。这时，new命令就会忽略这个return语句，返回“构造”后的this对象。</p>
+<p>但是，如果return语句返回的是一个跟this无关的新对象，new命令会返回这个新对象，而不是this对象。这一点需要特别引起注意。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var Vehicle = function ()&#123;</span><br><span class="line">  this.price = 1000;</span><br><span class="line">  return &#123; price: 2000 &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(new Vehicle()).price</span><br><span class="line">// 2000</span><br></pre></td></tr></table></figure>
+<p>上面代码中，构造函数Vehicle的return语句，返回的是一个新对象。new命令会返回这个对象，而不是this对象。</p>
+<p>另一方面，如果对普通函数（内部没有this关键字的函数）使用new命令，则会返回一个空对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function getMessage() &#123;</span><br><span class="line">  return &#x27;this is a message&#x27;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var msg = new getMessage();</span><br><span class="line"></span><br><span class="line">msg // &#123;&#125;</span><br><span class="line">typeof msg // &quot;object&quot;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，getMessage是一个普通函数，返回一个字符串。对它使用new命令，会得到一个空对象。这是因为new命令总是返回一个对象，要么是实例对象，要么是return语句指定的对象。本例中，return语句返回的是字符串，所以new命令就忽略了该语句。</p>
+<p>new命令简化的内部流程，可以用下面的代码表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function _new(/* 构造函数 */ constructor, /* 构造函数参数 */ params) &#123;</span><br><span class="line">  // 将 arguments 对象转为数组</span><br><span class="line">  var args = [].slice.call(arguments);</span><br><span class="line">  // 取出构造函数</span><br><span class="line">  var constructor = args.shift();</span><br><span class="line">  // 创建一个空对象，继承构造函数的 prototype 属性</span><br><span class="line">  var context = Object.create(constructor.prototype);</span><br><span class="line">  // 执行构造函数</span><br><span class="line">  var result = constructor.apply(context, args);</span><br><span class="line">  // 如果返回结果是对象，就直接返回，否则返回 context 对象</span><br><span class="line">  return (typeof result === &#x27;object&#x27; &amp;&amp; result != null) ? result : context;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 实例</span><br><span class="line">var actor = _new(Person, &#x27;张三&#x27;, 28);</span><br></pre></td></tr></table></figure>
+
+<h1 id="原型对象概述"><a href="#原型对象概述" class="headerlink" title="原型对象概述"></a>原型对象概述</h1><h2 id="构造函数的缺点"><a href="#构造函数的缺点" class="headerlink" title="构造函数的缺点"></a>构造函数的缺点</h2><p>JavaScript 通过构造函数生成新对象，因此构造函数可以视为对象的模板。实例对象的属性和方法，可以定义在构造函数内部。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Cat (name, color) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.color = color;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var cat1 = new Cat(&#x27;大毛&#x27;, &#x27;白色&#x27;);</span><br><span class="line"></span><br><span class="line">cat1.name // &#x27;大毛&#x27;</span><br><span class="line">cat1.color // &#x27;白色&#x27;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，Cat函数是一个构造函数，函数内部定义了name属性和color属性，所有实例对象（上例是cat1）都会生成这两个属性，即这两个属性会定义在实例对象上面。</p>
+<p>通过构造函数为实例对象定义属性，虽然很方便，但是有一个缺点。同一个构造函数的多个实例之间，无法共享属性，从而造成对系统资源的浪费。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function Cat(name, color) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.color = color;</span><br><span class="line">  this.meow = function () &#123;</span><br><span class="line">    console.log(&#x27;喵喵&#x27;);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var cat1 = new Cat(&#x27;大毛&#x27;, &#x27;白色&#x27;);</span><br><span class="line">var cat2 = new Cat(&#x27;二毛&#x27;, &#x27;黑色&#x27;);</span><br><span class="line"></span><br><span class="line">cat1.meow === cat2.meow</span><br><span class="line">// false</span><br></pre></td></tr></table></figure>
+<p>上面代码中，cat1和cat2是同一个构造函数的两个实例，它们都具有meow方法。由于meow方法是生成在每个实例对象上面，所以两个实例就生成了两次。也就是说，每新建一个实例，就会新建一个meow方法。这既没有必要，又浪费系统资源，因为所有meow方法都是同样的行为，完全应该共享。</p>
+<p>这个问题的解决方法，就是 JavaScript 的原型对象（prototype）。</p>
+<h2 id="prototype-属性的作用"><a href="#prototype-属性的作用" class="headerlink" title="prototype 属性的作用"></a>prototype 属性的作用</h2><p>JavaScript 继承机制的设计思想就是，原型对象的所有属性和方法，都能被实例对象共享。也就是说，如果属性和方法定义在原型上，那么所有实例对象就能共享，不仅节省了内存，还体现了实例对象之间的联系。</p>
+<p>下面，先看怎么为对象指定原型。JavaScript 规定，每个函数都有一个prototype属性，指向一个对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function f() &#123;&#125;</span><br><span class="line">typeof f.prototype // &quot;object&quot;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，函数f默认具有prototype属性，指向一个对象。</p>
+<p>对于普通函数来说，该属性基本无用。但是，对于构造函数来说，生成实例的时候，该属性会自动成为实例对象的原型。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Animal(name) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.color = &#x27;white&#x27;;</span><br><span class="line"></span><br><span class="line">var cat1 = new Animal(&#x27;大毛&#x27;);</span><br><span class="line">var cat2 = new Animal(&#x27;二毛&#x27;);</span><br><span class="line"></span><br><span class="line">cat1.color // &#x27;white&#x27;</span><br><span class="line">cat2.color // &#x27;white&#x27;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，构造函数Animal的prototype属性，就是实例对象cat1和cat2的原型对象。原型对象上添加一个color属性，结果，实例对象都共享了该属性。</p>
+<p>原型对象的属性不是实例对象自身的属性。只要修改原型对象，变动就立刻会体现在所有实例对象上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Animal.prototype.color = &#x27;yellow&#x27;;</span><br><span class="line"></span><br><span class="line">cat1.color // &quot;yellow&quot;</span><br><span class="line">cat2.color // &quot;yellow&quot;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，原型对象的color属性的值变为yellow，两个实例对象的color属性立刻跟着变了。这是因为实例对象其实没有color属性，都是读取原型对象的color属性。也就是说，当实例对象本身没有某个属性或方法的时候，它会到原型对象去寻找该属性或方法。这就是原型对象的特殊之处。</p>
+<p>如果实例对象自身就有某个属性或方法，它就不会再去原型对象寻找这个属性或方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat1.color = &#x27;black&#x27;;</span><br><span class="line"></span><br><span class="line">cat1.color // &#x27;black&#x27;</span><br><span class="line">cat2.color // &#x27;yellow&#x27;</span><br><span class="line">Animal.prototype.color // &#x27;yellow&#x27;;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，实例对象cat1的color属性改为black，就使得它不再去原型对象读取color属性，后者的值依然为yellow。</p>
+<p>总结一下，原型对象的作用，就是定义所有实例对象共享的属性和方法。这也是它被称为原型对象的原因，而实例对象可以视作从原型对象衍生出来的子对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Animal.prototype.walk = function () &#123;</span><br><span class="line">  console.log(this.name + &#x27; is walking&#x27;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，Animal.prototype对象上面定义了一个walk方法，这个方法将可以在所有Animal实例对象上面调用。</p>
+<h1 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h1><p>JavaScript 规定，所有对象都有自己的原型对象（prototype）。一方面，任何一个对象，都可以充当其他对象的原型；另一方面，由于原型对象也是对象，所以它也有自己的原型。因此，就会形成一个“原型链”（prototype chain）：对象到原型，再到原型的原型……</p>
+<p>如果一层层地上溯，所有对象的原型最终都可以上溯到Object.prototype，即Object构造函数的prototype属性。也就是说，所有对象都继承了Object.prototype的属性。这就是所有对象都有valueOf和toString方法的原因，因为这是从Object.prototype继承的。</p>
+<p>那么，Object.prototype对象有没有它的原型呢？回答是Object.prototype的原型是null。null没有任何属性和方法，也没有自己的原型。因此，原型链的尽头就是null。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object.getPrototypeOf(Object.prototype)</span><br><span class="line">// null</span><br></pre></td></tr></table></figure>
+<p>上面代码表示，Object.prototype对象的原型是null，由于null没有任何属性，所以原型链到此为止。Object.getPrototypeOf方法返回参数对象的原型，具体介绍请看后文。</p>
+<p>读取对象的某个属性时，JavaScript 引擎先寻找对象本身的属性，如果找不到，就到它的原型去找，如果还是找不到，就到原型的原型去找。如果直到最顶层的Object.prototype还是找不到，则返回undefined。如果对象自身和它的原型，都定义了一个同名属性，那么优先读取对象自身的属性，这叫做“覆盖”（overriding）。</p>
+<p>注意，一级级向上，在整个原型链上寻找某个属性，对性能是有影响的。所寻找的属性在越上层的原型对象，对性能的影响越大。如果寻找某个不存在的属性，将会遍历整个原型链。</p>
+<p>举例来说，如果让构造函数的prototype属性指向一个数组，就意味着实例对象可以调用数组方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var MyArray = function () &#123;&#125;;</span><br><span class="line"></span><br><span class="line">MyArray.prototype = new Array();</span><br><span class="line">MyArray.prototype.constructor = MyArray;</span><br><span class="line"></span><br><span class="line">var mine = new MyArray();</span><br><span class="line">mine.push(1, 2, 3);</span><br><span class="line">mine.length // 3</span><br><span class="line">mine instanceof Array // true</span><br></pre></td></tr></table></figure>
+<p>上面代码中，mine是构造函数MyArray的实例对象，由于MyArray.prototype指向一个数组实例，使得mine可以调用数组方法（这些方法定义在数组实例的prototype对象上面）。最后那行instanceof表达式，用来比较一个对象是否为某个构造函数的实例，结果就是证明mine为Array的实例</p>
+<h1 id="Object-prototype-proto"><a href="#Object-prototype-proto" class="headerlink" title="Object.prototype.proto"></a>Object.prototype.<strong>proto</strong></h1><p>实例对象的__proto__属性（前后各两个下划线），返回该对象的原型。该属性可读写。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125;;</span><br><span class="line">var p = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">obj.__proto__ = p;</span><br><span class="line">Object.getPrototypeOf(obj) === p // true</span><br></pre></td></tr></table></figure>
+<p>上面代码通过__proto__属性，将p对象设为obj对象的原型。</p>
+<p>根据语言标准，__proto__属性只有浏览器才需要部署，其他环境可以没有这个属性。它前后的两根下划线，表明它本质是一个内部属性，不应该对使用者暴露。因此，应该尽量少用这个属性，而是用Object.getPrototypeof()和Object.setPrototypeOf()，进行原型对象的读写操作。</p>
+<p>原型链可以用__proto__很直观地表示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">var A = &#123;</span><br><span class="line">  name: &#x27;张三&#x27;</span><br><span class="line">&#125;;</span><br><span class="line">var B = &#123;</span><br><span class="line">  name: &#x27;李四&#x27;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var proto = &#123;</span><br><span class="line">  print: function () &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">A.__proto__ = proto;</span><br><span class="line">B.__proto__ = proto;</span><br><span class="line"></span><br><span class="line">A.print() // 张三</span><br><span class="line">B.print() // 李四</span><br><span class="line"></span><br><span class="line">A.print === B.print // true</span><br><span class="line">A.print === proto.print // true</span><br><span class="line">B.print === proto.print // true</span><br></pre></td></tr></table></figure>
+<p>上面代码中，A对象和B对象的原型都是proto对象，它们都共享proto对象的print方法。也就是说，A和B的print方法，都是在调用proto对象的print方法。</p>
+<h1 id="获取原型对象方法的比较"><a href="#获取原型对象方法的比较" class="headerlink" title="获取原型对象方法的比较"></a>获取原型对象方法的比较</h1><p>如前所述，__proto__属性指向当前对象的原型对象，即构造函数的prototype属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = new Object();</span><br><span class="line"></span><br><span class="line">obj.__proto__ === Object.prototype</span><br><span class="line">// true</span><br><span class="line">obj.__proto__ === obj.constructor.prototype</span><br><span class="line">// true</span><br></pre></td></tr></table></figure>
+<p>上面代码首先新建了一个对象obj，它的__proto__属性，指向构造函数（Object或obj.constructor）的prototype属性。</p>
+<p>因此，获取实例对象obj的原型对象，有三种方法。</p>
+<ul>
+<li>obj.<strong>proto</strong></li>
+<li>obj.constructor.prototype</li>
+<li>Object.getPrototypeOf(obj)</li>
+</ul>
+<p>上面三种方法之中，前两种都不是很可靠。__proto__属性只有浏览器才需要部署，其他环境可以不部署。而obj.constructor.prototype在手动改变原型对象时，可能会失效。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var P = function () &#123;&#125;;</span><br><span class="line">var p = new P();</span><br><span class="line"></span><br><span class="line">var C = function () &#123;&#125;;</span><br><span class="line">C.prototype = p;</span><br><span class="line">var c = new C();</span><br><span class="line"></span><br><span class="line">c.constructor.prototype === p // false</span><br></pre></td></tr></table></figure>
+<p>上面代码中，构造函数C的原型对象被改成了p，但是实例对象的c.constructor.prototype却没有指向p。所以，在改变原型对象时，一般要同时设置constructor属性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C.prototype = p;</span><br><span class="line">C.prototype.constructor = C;</span><br><span class="line"></span><br><span class="line">var c = new C();</span><br><span class="line">c.constructor.prototype === p // true</span><br></pre></td></tr></table></figure>
+<p>因此，推荐使用第三种Object.getPrototypeOf方法，获取原型对象。</p>
+<p><strong>参考链接：阮一峰-<a target="_blank" rel="noopener external nofollow noreferrer" href="https://wangdoc.com/javascript/">JavaScript教程</a></strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://808mak1r.com">808Mak1r</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://808mak1r.com/posts/e8f85541.html">https://808mak1r.com/posts/e8f85541.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://808mak1r.com" target="_blank">808Mak1r</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/bb0f4488.html" title="常见DOM以及API总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">常见DOM以及API总结</div></div></a></div><div class="next-post pull-right"><a href="/posts/c07d50bb.html" title="JS数组API运用相关代码总结"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JS数组API运用相关代码总结</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/ee1ff2c0.html" title="CSS布局"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-20</div><div class="title">CSS布局</div></div></a></div><div><a href="/posts/16a89419.html" title="HTML常用标签"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-17</div><div class="title">HTML常用标签</div></div></a></div><div><a href="/posts/c1b6cd4f.html" title="Cookie是什么"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-07-05</div><div class="title">Cookie是什么</div></div></a></div><div><a href="/posts/8ad51e38.html" title="HTML简介"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-03-16</div><div class="title">HTML简介</div></div></a></div><div><a href="/posts/4e9a1842.html" title="JS的数组与伪数组的区别"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-13</div><div class="title">JS的数组与伪数组的区别</div></div></a></div><div><a href="/posts/41571557.html" title="JS里的数据类型"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-04-03</div><div class="title">JS里的数据类型</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">808Mak1r</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">28</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">11</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/808Mak1r"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/808Mak1r" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:808mak1r@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://808Mak1r.com/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">安全第一，不要隨意點擊鏈接</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">对象是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#new-%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">new 命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">2.1.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#new-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">2.1.2.</span> <span class="toc-text">new 命令的原理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E6%A6%82%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">原型对象概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">3.1.</span> <span class="toc-text">构造函数的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prototype-%E5%B1%9E%E6%80%A7%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">3.2.</span> <span class="toc-text">prototype 属性的作用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">4.</span> <span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object-prototype-proto"><span class="toc-number">5.</span> <span class="toc-text">Object.prototype.proto</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">6.</span> <span class="toc-text">获取原型对象方法的比较</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/19d1f7ce.html" title="cobaltstrike-beacon-rust测试与修改"><img src="https://s2.loli.net/2023/05/12/lyRaqK1B2XU3iHv.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="cobaltstrike-beacon-rust测试与修改"/></a><div class="content"><a class="title" href="/posts/19d1f7ce.html" title="cobaltstrike-beacon-rust测试与修改">cobaltstrike-beacon-rust测试与修改</a><time datetime="2023-05-12T04:30:00.000Z" title="发表于 2023-05-12 12:30:00">2023-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/836b7920.html" title="K8S API访问控制之RBAC利用"><img src="https://s2.loli.net/2023/01/16/qa3SlYLugRETrem.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="K8S API访问控制之RBAC利用"/></a><div class="content"><a class="title" href="/posts/836b7920.html" title="K8S API访问控制之RBAC利用">K8S API访问控制之RBAC利用</a><time datetime="2023-01-16T08:30:00.000Z" title="发表于 2023-01-16 16:30:00">2023-01-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/68261434.html" title="Linux Capabilities利用总结"><img src="https://s2.loli.net/2023/01/09/4vITlXZFsipSC9B.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux Capabilities利用总结"/></a><div class="content"><a class="title" href="/posts/68261434.html" title="Linux Capabilities利用总结">Linux Capabilities利用总结</a><time datetime="2023-01-08T11:30:00.000Z" title="发表于 2023-01-08 19:30:00">2023-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/c6ff0a27.html" title="获取k8s的Cluster Admin权限后的横向节点与持久化探索"><img src="https://s2.loli.net/2023/01/03/6W72oS18xeraJpn.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="获取k8s的Cluster Admin权限后的横向节点与持久化探索"/></a><div class="content"><a class="title" href="/posts/c6ff0a27.html" title="获取k8s的Cluster Admin权限后的横向节点与持久化探索">获取k8s的Cluster Admin权限后的横向节点与持久化探索</a><time datetime="2023-01-03T04:30:00.000Z" title="发表于 2023-01-03 12:30:00">2023-01-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/97367518.html" title="CVE-2019-12937 ToaruOS权限提升分析"><img src="https://s2.loli.net/2022/03/10/ba8rwvM2kK1p6WO.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CVE-2019-12937 ToaruOS权限提升分析"/></a><div class="content"><a class="title" href="/posts/97367518.html" title="CVE-2019-12937 ToaruOS权限提升分析">CVE-2019-12937 ToaruOS权限提升分析</a><time datetime="2022-03-10T07:24:33.000Z" title="发表于 2022-03-10 15:24:33">2022-03-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/default_top_img.png')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By 808Mak1r</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'NZxAliQ2yPethAcWi3V6ZobW-MdYXbMMI',
+      appKey: 'dkE8SQ4Ucif6NRH0TGxXfmM9',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script type='text/javascript' src='/js/baidupush.js'></script></div></body></html>
