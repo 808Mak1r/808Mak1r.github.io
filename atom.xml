@@ -18,8 +18,8 @@
   
   <entry>
     <title>cobaltstrike-beacon-rust测试与修改</title>
-    <link href="https://808mak1r.com/posts/19d1f7ce.html"/>
-    <id>https://808mak1r.com/posts/19d1f7ce.html</id>
+    <link href="https://808mak1r.com/posts/19d1f7ce/"/>
+    <id>https://808mak1r.com/posts/19d1f7ce/</id>
     <published>2023-05-12T04:30:00.000Z</published>
     <updated>2023-05-12T05:39:51.930Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>K8S API访问控制之RBAC利用</title>
-    <link href="https://808mak1r.com/posts/836b7920.html"/>
-    <id>https://808mak1r.com/posts/836b7920.html</id>
+    <link href="https://808mak1r.com/posts/836b7920/"/>
+    <id>https://808mak1r.com/posts/836b7920/</id>
     <published>2023-01-16T08:30:00.000Z</published>
     <updated>2023-02-20T07:22:41.021Z</updated>
     
@@ -68,8 +68,8 @@
   
   <entry>
     <title>Linux Capabilities利用总结</title>
-    <link href="https://808mak1r.com/posts/68261434.html"/>
-    <id>https://808mak1r.com/posts/68261434.html</id>
+    <link href="https://808mak1r.com/posts/68261434/"/>
+    <id>https://808mak1r.com/posts/68261434/</id>
     <published>2023-01-08T11:30:00.000Z</published>
     <updated>2023-02-20T07:27:16.450Z</updated>
     
@@ -93,8 +93,8 @@
   
   <entry>
     <title>获取k8s的Cluster Admin权限后的横向节点与持久化探索</title>
-    <link href="https://808mak1r.com/posts/c6ff0a27.html"/>
-    <id>https://808mak1r.com/posts/c6ff0a27.html</id>
+    <link href="https://808mak1r.com/posts/c6ff0a27/"/>
+    <id>https://808mak1r.com/posts/c6ff0a27/</id>
     <published>2023-01-03T04:30:00.000Z</published>
     <updated>2023-02-18T09:18:15.454Z</updated>
     
@@ -124,8 +124,8 @@
   
   <entry>
     <title>CVE-2019-12937 ToaruOS权限提升分析</title>
-    <link href="https://808mak1r.com/posts/97367518.html"/>
-    <id>https://808mak1r.com/posts/97367518.html</id>
+    <link href="https://808mak1r.com/posts/97367518/"/>
+    <id>https://808mak1r.com/posts/97367518/</id>
     <published>2022-03-10T07:24:33.000Z</published>
     <updated>2023-02-18T09:18:15.409Z</updated>
     
@@ -143,8 +143,8 @@
   
   <entry>
     <title>域认证协议</title>
-    <link href="https://808mak1r.com/posts/e5b8863d.html"/>
-    <id>https://808mak1r.com/posts/e5b8863d.html</id>
+    <link href="https://808mak1r.com/posts/e5b8863d/"/>
+    <id>https://808mak1r.com/posts/e5b8863d/</id>
     <published>2021-11-02T06:30:00.000Z</published>
     <updated>2023-02-18T09:18:15.437Z</updated>
     
@@ -160,8 +160,8 @@
   
   <entry>
     <title>域控-信息收集</title>
-    <link href="https://808mak1r.com/posts/85d755d.html"/>
-    <id>https://808mak1r.com/posts/85d755d.html</id>
+    <link href="https://808mak1r.com/posts/85d755d/"/>
+    <id>https://808mak1r.com/posts/85d755d/</id>
     <published>2021-09-16T03:00:00.000Z</published>
     <updated>2023-02-18T09:18:15.440Z</updated>
     
@@ -183,8 +183,8 @@
   
   <entry>
     <title>域控-概念</title>
-    <link href="https://808mak1r.com/posts/7dba0923.html"/>
-    <id>https://808mak1r.com/posts/7dba0923.html</id>
+    <link href="https://808mak1r.com/posts/7dba0923/"/>
+    <id>https://808mak1r.com/posts/7dba0923/</id>
     <published>2021-09-16T02:30:00.000Z</published>
     <updated>2023-02-18T09:18:15.457Z</updated>
     
@@ -204,8 +204,8 @@
   
   <entry>
     <title>Flash 钓鱼</title>
-    <link href="https://808mak1r.com/posts/69bf394d.html"/>
-    <id>https://808mak1r.com/posts/69bf394d.html</id>
+    <link href="https://808mak1r.com/posts/69bf394d/"/>
+    <id>https://808mak1r.com/posts/69bf394d/</id>
     <published>2021-09-15T02:30:00.000Z</published>
     <updated>2023-02-18T09:18:15.412Z</updated>
     
@@ -225,8 +225,8 @@
   
   <entry>
     <title>Kali 安装 Parallels Tools</title>
-    <link href="https://808mak1r.com/posts/eaed8b43.html"/>
-    <id>https://808mak1r.com/posts/eaed8b43.html</id>
+    <link href="https://808mak1r.com/posts/eaed8b43/"/>
+    <id>https://808mak1r.com/posts/eaed8b43/</id>
     <published>2021-08-30T02:30:00.000Z</published>
     <updated>2023-02-18T09:18:15.427Z</updated>
     
@@ -244,8 +244,8 @@
   
   <entry>
     <title>内网穿透--ABPTTS正向代理cs上线</title>
-    <link href="https://808mak1r.com/posts/3ab59d7a.html"/>
-    <id>https://808mak1r.com/posts/3ab59d7a.html</id>
+    <link href="https://808mak1r.com/posts/3ab59d7a/"/>
+    <id>https://808mak1r.com/posts/3ab59d7a/</id>
     <published>2021-01-04T01:05:03.000Z</published>
     <updated>2023-02-18T09:18:15.435Z</updated>
     
@@ -271,8 +271,8 @@
   
   <entry>
     <title>试着去理解虚拟DOM</title>
-    <link href="https://808mak1r.com/posts/bf933986.html"/>
-    <id>https://808mak1r.com/posts/bf933986.html</id>
+    <link href="https://808mak1r.com/posts/bf933986/"/>
+    <id>https://808mak1r.com/posts/bf933986/</id>
     <published>2019-08-20T09:57:12.000Z</published>
     <updated>2023-02-18T09:18:15.454Z</updated>
     
@@ -290,8 +290,8 @@
   
   <entry>
     <title>Cookie是什么</title>
-    <link href="https://808mak1r.com/posts/c1b6cd4f.html"/>
-    <id>https://808mak1r.com/posts/c1b6cd4f.html</id>
+    <link href="https://808mak1r.com/posts/c1b6cd4f/"/>
+    <id>https://808mak1r.com/posts/c1b6cd4f/</id>
     <published>2019-07-04T16:00:00.000Z</published>
     <updated>2023-02-18T09:18:15.416Z</updated>
     
@@ -309,8 +309,8 @@
   
   <entry>
     <title>JS高级基础知识小结</title>
-    <link href="https://808mak1r.com/posts/69c49c79.html"/>
-    <id>https://808mak1r.com/posts/69c49c79.html</id>
+    <link href="https://808mak1r.com/posts/69c49c79/"/>
+    <id>https://808mak1r.com/posts/69c49c79/</id>
     <published>2019-06-29T07:31:03.000Z</published>
     <updated>2023-02-18T09:18:15.424Z</updated>
     
@@ -328,8 +328,8 @@
   
   <entry>
     <title>前端知识小结</title>
-    <link href="https://808mak1r.com/posts/e707bd3a.html"/>
-    <id>https://808mak1r.com/posts/e707bd3a.html</id>
+    <link href="https://808mak1r.com/posts/e707bd3a/"/>
+    <id>https://808mak1r.com/posts/e707bd3a/</id>
     <published>2019-06-06T09:35:48.000Z</published>
     <updated>2023-02-18T09:18:15.436Z</updated>
     
@@ -347,8 +347,8 @@
   
   <entry>
     <title>自己写一个简版jQuery</title>
-    <link href="https://808mak1r.com/posts/f816e53f.html"/>
-    <id>https://808mak1r.com/posts/f816e53f.html</id>
+    <link href="https://808mak1r.com/posts/f816e53f/"/>
+    <id>https://808mak1r.com/posts/f816e53f/</id>
     <published>2019-04-24T10:49:36.000Z</published>
     <updated>2023-02-18T09:18:15.452Z</updated>
     
@@ -366,8 +366,8 @@
   
   <entry>
     <title>JS函数的五种声明方式</title>
-    <link href="https://808mak1r.com/posts/e760f234.html"/>
-    <id>https://808mak1r.com/posts/e760f234.html</id>
+    <link href="https://808mak1r.com/posts/e760f234/"/>
+    <id>https://808mak1r.com/posts/e760f234/</id>
     <published>2019-04-17T09:58:27.000Z</published>
     <updated>2023-02-18T09:18:15.419Z</updated>
     
@@ -385,8 +385,8 @@
   
   <entry>
     <title>JS的数组与伪数组的区别</title>
-    <link href="https://808mak1r.com/posts/4e9a1842.html"/>
-    <id>https://808mak1r.com/posts/4e9a1842.html</id>
+    <link href="https://808mak1r.com/posts/4e9a1842/"/>
+    <id>https://808mak1r.com/posts/4e9a1842/</id>
     <published>2019-04-13T09:28:10.000Z</published>
     <updated>2023-02-18T09:18:15.421Z</updated>
     
@@ -404,8 +404,8 @@
   
   <entry>
     <title>常见DOM以及API总结</title>
-    <link href="https://808mak1r.com/posts/bb0f4488.html"/>
-    <id>https://808mak1r.com/posts/bb0f4488.html</id>
+    <link href="https://808mak1r.com/posts/bb0f4488/"/>
+    <id>https://808mak1r.com/posts/bb0f4488/</id>
     <published>2019-04-12T02:41:20.000Z</published>
     <updated>2023-02-18T09:18:15.439Z</updated>
     
@@ -423,8 +423,8 @@
   
   <entry>
     <title>原型与原型链</title>
-    <link href="https://808mak1r.com/posts/e8f85541.html"/>
-    <id>https://808mak1r.com/posts/e8f85541.html</id>
+    <link href="https://808mak1r.com/posts/e8f85541/"/>
+    <id>https://808mak1r.com/posts/e8f85541/</id>
     <published>2019-04-06T11:12:56.000Z</published>
     <updated>2023-02-18T09:18:15.436Z</updated>
     
