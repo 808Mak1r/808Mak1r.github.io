@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://808mak1r.com/posts/49498bab/</loc>
+    
+    <lastmod>2023-12-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://808mak1r.com/posts/19d1f7ce/</loc>
     
     <lastmod>2023-05-12</lastmod>
@@ -292,7 +301,7 @@
 
   <url>
     <loc>https://808mak1r.com/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -300,168 +309,175 @@
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E9%92%93%E9%B1%BC/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/flash/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/k8s/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/Kubernetes/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/API%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/RBAC/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/tags/%E6%8F%90%E6%9D%83/</loc>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/Mac/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/Kali/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/Linux/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/Linux%E6%8F%90%E6%9D%83/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%AE%B9%E5%99%A8%E9%80%83%E9%80%B8/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%90%8E%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%86%85%E7%BD%91/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/CS/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%9F%9F%E6%8E%A7/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E5%9F%9F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -470,77 +486,77 @@
   
   <url>
     <loc>https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E9%92%93%E9%B1%BC/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/Linux/</loc>
-    <lastmod>2023-10-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://808mak1r.com/categories/%E5%90%8E%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E4%BA%91%E5%8E%9F%E7%94%9F/Kubernetes/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://808mak1r.com/categories/%E5%90%8E%E6%B8%97%E9%80%8F/</loc>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E6%B8%97%E9%80%8F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/Linux/Linux%E6%8F%90%E6%9D%83/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E5%9F%9F/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://808mak1r.com/categories/%E6%B8%97%E9%80%8F/%E5%86%85%E7%BD%91/</loc>
-    <lastmod>2023-10-10</lastmod>
+    <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
