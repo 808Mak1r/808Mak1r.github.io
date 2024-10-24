@@ -2,5 +2,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://808mak1r.com/atom.xml
 Sitemap: https://808mak1r.com/sitemap.xml
 Sitemap: https://808mak1r.com/baidusitemap.xml
