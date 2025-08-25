@@ -6,7 +6,7 @@
   <link href="https://808mak1r.com/atom.xml" rel="self"/>
   
   <link href="https://808mak1r.com/"/>
-  <updated>2023-12-19T06:25:06.744Z</updated>
+  <updated>2025-08-25T05:55:19.081Z</updated>
   <id>https://808mak1r.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2024-37032 Ollama 远程命令执行</title>
+    <link href="https://808mak1r.com/posts/b03a3800/"/>
+    <id>https://808mak1r.com/posts/b03a3800/</id>
+    <published>2025-03-05T04:30:00.000Z</published>
+    <updated>2025-08-25T05:55:19.081Z</updated>
+    
+    
+    <summary type="html">CVE-2024-37032 Ollama 远程命令执行</summary>
+    
+    
+    
+    <category term="AI" scheme="https://808mak1r.com/categories/AI/"/>
+    
+    
+    <category term="AI" scheme="https://808mak1r.com/tags/AI/"/>
+    
+    <category term="大模型安全" scheme="https://808mak1r.com/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%AE%89%E5%85%A8/"/>
+    
+    <category term="AI供应链" scheme="https://808mak1r.com/tags/AI%E4%BE%9B%E5%BA%94%E9%93%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>K8S 中对 Windows 节点的利用</title>
@@ -429,27 +452,4 @@
     
   </entry>
   
-  <entry>
-    <title>常见DOM以及API总结</title>
-    <link href="https://808mak1r.com/posts/bb0f4488/"/>
-    <id>https://808mak1r.com/posts/bb0f4488/</id>
-    <published>2019-04-12T02:41:20.000Z</published>
-    <updated>2023-02-18T09:18:15.439Z</updated>
-    
-    
-    <summary type="html">常见DOM以及API总结</summary>
-    
-    
-    
-    <category term="前端" scheme="https://808mak1r.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="前端" scheme="https://808mak1r.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <follow_challenge>
-    <feedId>70017447661051904</feedId>
-    <userId>69932701179930624</userId>
-  </follow_challenge>
 </feed>
