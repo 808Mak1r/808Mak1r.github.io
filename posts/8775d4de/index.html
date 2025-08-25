@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>SSH 流量解密 | 808Mak1r</title><meta name="author" content="808Mak1r"><meta name="copyright" content="808Mak1r"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="通对 SSH 进程内存抓取解密因子完成 SSH 流量解密">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH 流量解密">
+<meta property="og:url" content="https://808mak1r.com/posts/8775d4de/index.html">
+<meta property="og:site_name" content="808Mak1r">
+<meta property="og:description" content="通对 SSH 进程内存抓取解密因子完成 SSH 流量解密">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2025/08/25/6JfsmUStvOiX1Rl.png">
+<meta property="article:published_time" content="2025-03-17T04:30:00.000Z">
+<meta property="article:modified_time" content="2025-08-25T06:24:19.411Z">
+<meta property="article:author" content="808Mak1r">
+<meta property="article:tag" content="流量解密">
+<meta property="article:tag" content="SSH">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2025/08/25/6JfsmUStvOiX1Rl.png"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://808mak1r.com/posts/8775d4de/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><meta name="baidu-site-verification" content="codeva-oJtCWGvnfW"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8167737ca82fde3fd44496e0be15d1c9";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SSH 流量解密',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-08-25 14:24:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="808Mak1r" type="application/atom+xml">
+</head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js/themes/blue/pace-theme-minimal.min.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s2.loli.net/2025/08/25/6JfsmUStvOiX1Rl.png')"><nav id="nav"><span id="blog-info"><a href="/" title="808Mak1r"><span class="site-name">808Mak1r</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SSH 流量解密</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-03-17T04:30:00.000Z" title="发表于 2025-03-17 12:30:00">2025-03-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-08-25T06:24:19.411Z" title="更新于 2025-08-25 14:24:19">2025-08-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">867</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>linux 服务器基本信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@tom-server:~/ssh-test# <span class="built_in">uname</span> -a</span><br><span class="line">Linux tom-server 5.4.0-200-generic <span class="comment">#220-Ubuntu SMP Fri Sep 27 13:19:16 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux</span></span><br><span class="line">root@tom-server:~/ssh-test# ssh -V</span><br><span class="line">OpenSSH_8.2p1 Ubuntu-4ubuntu0.12, OpenSSL 1.1.1f  31 Mar 2020</span><br><span class="line">root@tom-server:~/ssh-test# python3 -V</span><br><span class="line">Python 3.8.10</span><br><span class="line">root@tom-server:~/ssh-test# python2 -V</span><br><span class="line">Python 2.7.18</span><br></pre></td></tr></table></figure>
+
+<h1 id="获取SSH会话解密因子和流量包"><a href="#获取SSH会话解密因子和流量包" class="headerlink" title="获取SSH会话解密因子和流量包"></a>获取SSH会话解密因子和流量包</h1><p>使用 <code>tcpdump</code> 在 linux 服务端抓取 SSH 22 端口的流量包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> tcpdump -i any port 22 -w ssh_traffic.pcap</span><br></pre></td></tr></table></figure>
+
+
+
+<p>客户端通过 SSH 连接服务器，并执行一些简单的命令做测试，如 <code>ls</code>、<code>pwd</code>等，方便解密流量后观察</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh root@server-ip</span><br></pre></td></tr></table></figure>
+
+
+
+<p>使用 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/fox-it/OpenSSH-Session-Key-Recovery">OpenSSH-Session-Key-Recovery</a> 对 SSH 内存抓取会话解密因子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 OpenSSH-Session-Key-Recovery/pip-package/openssh_session_keys/keys.py</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2025/08/25/1TWuFlbmKEeVtH7.png"></p>
+<p>抓取前可以先测试一遍，以判断哪一对是新增的解密因子</p>
+<ul>
+<li>通过脚本抓取到的解密因子<ul>
+<li>pid：ssh客户端的进程号为4039879</li>
+<li>sshenc_addr：sshenc结构体内存地址为93860335628000</li>
+<li>cipher_name：对称加密算法为<a href="mailto:&#x61;&#101;&#x73;&#x32;&#53;&#54;&#45;&#x67;&#x63;&#x6d;&#64;&#111;&#112;&#101;&#110;&#115;&#x73;&#x68;&#x2e;&#99;&#x6f;&#109;" rel="external nofollow noreferrer">aes256-gcm@openssh.com</a></li>
+<li>key：会话密钥</li>
+<li>iv：初始化向量</li>
+<li>sshenc：sshenc结构体</li>
+<li>network_connections：tcp连接情况，10.181.11.90的22端口向远程10.181.11.92的22端口建立了TCP连接</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span> <span class="number">4039879</span><span class="punctuation">,</span> <span class="attr">&quot;proc_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sshd&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;sshenc_addr&quot;</span><span class="punctuation">:</span> <span class="number">93860335628000</span><span class="punctuation">,</span> <span class="attr">&quot;cipher_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;aes256-gcm@openssh.com&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a9ac0ed591a68dd8752e625c44ec3333ec9bdcf074f9474f09068d036955c1b8&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;iv&quot;</span><span class="punctuation">:</span> <span class="string">&quot;f8520a9d17d34d6c9b0d25f6&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;sshenc&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="number">93860335680080</span><span class="punctuation">,</span> <span class="attr">&quot;cipher&quot;</span><span class="punctuation">:</span> <span class="number">93860080389480</span><span class="punctuation">,</span> <span class="attr">&quot;enabled&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span> <span class="attr">&quot;key_len&quot;</span><span class="punctuation">:</span> <span class="number">32</span><span class="punctuation">,</span> <span class="attr">&quot;iv_len&quot;</span><span class="punctuation">:</span> <span class="number">12</span><span class="punctuation">,</span> <span class="attr">&quot;block_size&quot;</span><span class="punctuation">:</span> <span class="number">16</span><span class="punctuation">,</span> <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="number">93860335615632</span><span class="punctuation">,</span> <span class="attr">&quot;iv&quot;</span><span class="punctuation">:</span> <span class="number">93860335670560</span><span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="attr">&quot;network_connections&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;family&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span> <span class="attr">&quot;fd&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span> <span class="attr">&quot;laddr&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;10.181.11.92&quot;</span><span class="punctuation">,</span> <span class="number">22</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;raddr&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;10.181.11.90&quot;</span><span class="punctuation">,</span> <span class="number">50623</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ESTABLISHED&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;pid&quot;</span><span class="punctuation">:</span> <span class="number">4039879</span><span class="punctuation">,</span> <span class="attr">&quot;proc_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sshd&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;sshenc_addr&quot;</span><span class="punctuation">:</span> <span class="number">93860335703504</span><span class="punctuation">,</span> <span class="attr">&quot;cipher_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;aes256-gcm@openssh.com&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;7ca58c5b5e67f34043069d53fb13ebc2b82fb7c10138dbf4e8921a84aa371c97&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;iv&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5c20bc2f6ffe9f81516ca2a0&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;sshenc&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="number">93860335523952</span><span class="punctuation">,</span> <span class="attr">&quot;cipher&quot;</span><span class="punctuation">:</span> <span class="number">93860080389480</span><span class="punctuation">,</span> <span class="attr">&quot;enabled&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span> <span class="attr">&quot;key_len&quot;</span><span class="punctuation">:</span> <span class="number">32</span><span class="punctuation">,</span> <span class="attr">&quot;iv_len&quot;</span><span class="punctuation">:</span> <span class="number">12</span><span class="punctuation">,</span> <span class="attr">&quot;block_size&quot;</span><span class="punctuation">:</span> <span class="number">16</span><span class="punctuation">,</span> <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="number">93860335701296</span><span class="punctuation">,</span> <span class="attr">&quot;iv&quot;</span><span class="punctuation">:</span> <span class="number">93860335680048</span><span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="attr">&quot;network_connections&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">&#123;</span><span class="attr">&quot;family&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span> <span class="attr">&quot;fd&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span> <span class="attr">&quot;laddr&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;10.181.11.92&quot;</span><span class="punctuation">,</span> <span class="number">22</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;raddr&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;10.181.11.90&quot;</span><span class="punctuation">,</span> <span class="number">50623</span><span class="punctuation">]</span><span class="punctuation">,</span> <span class="attr">&quot;status&quot;</span><span class="punctuation">:</span> <span class="string">&quot;ESTABLISHED&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">&#125;</span><span class="punctuation">]</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>参考下面模板，替换对应内容，并保存为 <code>json</code> 文件解密使用</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;task_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sshd&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;sshenc_addr&quot;</span><span class="punctuation">:</span> <span class="number">93860335628000</span><span class="punctuation">,</span> <span class="attr">&quot;cipher_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;aes256-gcm@openssh.com&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;a9ac0ed591a68dd8752e625c44ec3333ec9bdcf074f9474f09068d036955c1b8&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;iv&quot;</span><span class="punctuation">:</span> <span class="string">&quot;f8520a9d17d34d6c9b0d25f6&quot;</span><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;task_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sshd&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;sshenc_addr&quot;</span><span class="punctuation">:</span> <span class="number">93860335703504</span><span class="punctuation">,</span> <span class="attr">&quot;cipher_name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;aes256-gcm@openssh.com&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;key&quot;</span><span class="punctuation">:</span> <span class="string">&quot;7ca58c5b5e67f34043069d53fb13ebc2b82fb7c10138dbf4e8921a84aa371c97&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;iv&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5c20bc2f6ffe9f81516ca2a0&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="解密-SSH-流量"><a href="#解密-SSH-流量" class="headerlink" title="解密 SSH 流量"></a>解密 SSH 流量</h1><p>前置条件：</p>
+<ul>
+<li>解密脚本：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/fox-it/OpenSSH-Network-Parser">https://github.com/fox-it/OpenSSH-Network-Parser</a>(python2.7)</li>
+<li>SSH 流量包</li>
+<li>解密因子构造的 <code>json</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2.7 -m openssh_network_parser.tools.network_parser -p ../ssh_traffic.pcap --proto=ssh --popt keyfile=../ssh-keys.json -o outssh -s</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-p</code>：载入pcap流量包路径</li>
+<li><code>--proto</code>：解析协议</li>
+<li><code>--popt</code>：载入密钥文件</li>
+<li><code>-o</code>：运行过程中一些统计信息输出路径</li>
+<li><code>-s</code>：打印到标准输出而不是日志文件</li>
+</ul>
+<p>可以看到脚本成功执行后，客户端向服务器传输的命令以及服务器的响应都解密还原成功</p>
+<p><img src="https://s2.loli.net/2025/08/25/RnwrafyVzNpbFhS.png"></p>
+<p><img src="https://s2.loli.net/2025/08/25/lnItYi5Tkr1eF6z.png"></p>
+<h3 id="解决-dissect-依赖报错"><a href="#解决-dissect-依赖报错" class="headerlink" title="解决 dissect 依赖报错"></a>解决 dissect 依赖报错</h3><p>运行命令先查看当前 pip2 查看当前环境安装包信息</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip2 list -v | grep dissect</span><br></pre></td></tr></table></figure>
+
+<p>可以发现dissect.cstruct 的版本是 2.0</p>
+<p>而我们需要的环境是 1.0.0 </p>
+<p><img src="https://s2.loli.net/2025/08/25/zDMrTSWYLoNkQIU.png"></p>
+<p>重新安装</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip2 uninstall dissect.c<span class="keyword">struct</span></span><br><span class="line"><span class="title class_">pip2</span> install dissect.cstruct==<span class="number">1.0</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2025/08/25/4V2YS3tsTQym5UJ.png"></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://blog.fox-it.com/2020/11/11/decrypting-openssh-sessions-for-fun-and-profit/">https://blog.fox-it.com/2020/11/11/decrypting-openssh-sessions-for-fun-and-profit/</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/fox-it/OpenSSH-Session-Key-Recovery">https://github.com/fox-it/OpenSSH-Session-Key-Recovery</a></p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/fox-it/OpenSSH-Network-Parser">https://github.com/fox-it/OpenSSH-Network-Parser</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://808mak1r.com">808Mak1r</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://808mak1r.com/posts/8775d4de/">https://808mak1r.com/posts/8775d4de/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://808mak1r.com" target="_blank">808Mak1r</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B5%81%E9%87%8F%E8%A7%A3%E5%AF%86/">流量解密</a><a class="post-meta__tags" href="/tags/SSH/">SSH</a></div><div class="post_share"><div class="social-share" data-image="https://s2.loli.net/2025/08/25/6JfsmUStvOiX1Rl.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/8775d4de/" title="SSH 流量解密"><img class="cover" src="https://s2.loli.net/2025/08/25/1jKw7QktUTEg8OI.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SSH 流量解密</div></div></a></div><div class="next-post pull-right"><a href="/posts/b03a3800/" title="CVE-2024-37032 Ollama 远程命令执行"><img class="cover" src="https://s2.loli.net/2025/08/25/19seDJN2UOtiYMm.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">CVE-2024-37032 Ollama 远程命令执行</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">808Mak1r</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">31</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/808Mak1r"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/808Mak1r" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:808mak1r@gmail.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://808Mak1r.com/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">安全第一，不要隨意點擊鏈接</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96SSH%E4%BC%9A%E8%AF%9D%E8%A7%A3%E5%AF%86%E5%9B%A0%E5%AD%90%E5%92%8C%E6%B5%81%E9%87%8F%E5%8C%85"><span class="toc-number">1.</span> <span class="toc-text">获取SSH会话解密因子和流量包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%A3%E5%AF%86-SSH-%E6%B5%81%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">解密 SSH 流量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3-dissect-%E4%BE%9D%E8%B5%96%E6%8A%A5%E9%94%99"><span class="toc-number">2.0.1.</span> <span class="toc-text">解决 dissect 依赖报错</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/5426390e/" title="ingress-nginx 准入控制器风险"><img src="https://s2.loli.net/2025/08/25/VnPO3cbrSlxjCuq.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ingress-nginx 准入控制器风险"/></a><div class="content"><a class="title" href="/posts/5426390e/" title="ingress-nginx 准入控制器风险">ingress-nginx 准入控制器风险</a><time datetime="2025-03-31T04:30:00.000Z" title="发表于 2025-03-31 12:30:00">2025-03-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8775d4de/" title="SSH 流量解密"><img src="https://s2.loli.net/2025/08/25/1jKw7QktUTEg8OI.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSH 流量解密"/></a><div class="content"><a class="title" href="/posts/8775d4de/" title="SSH 流量解密">SSH 流量解密</a><time datetime="2025-03-25T04:30:00.000Z" title="发表于 2025-03-25 12:30:00">2025-03-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8775d4de/" title="SSH 流量解密"><img src="https://s2.loli.net/2025/08/25/6JfsmUStvOiX1Rl.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SSH 流量解密"/></a><div class="content"><a class="title" href="/posts/8775d4de/" title="SSH 流量解密">SSH 流量解密</a><time datetime="2025-03-17T04:30:00.000Z" title="发表于 2025-03-17 12:30:00">2025-03-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b03a3800/" title="CVE-2024-37032 Ollama 远程命令执行"><img src="https://s2.loli.net/2025/08/25/19seDJN2UOtiYMm.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CVE-2024-37032 Ollama 远程命令执行"/></a><div class="content"><a class="title" href="/posts/b03a3800/" title="CVE-2024-37032 Ollama 远程命令执行">CVE-2024-37032 Ollama 远程命令执行</a><time datetime="2025-03-05T04:30:00.000Z" title="发表于 2025-03-05 12:30:00">2025-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/49498bab/" title="K8S 中对 Windows 节点的利用"><img src="https://s2.loli.net/2023/12/19/zHtVTpenAlUwfmD.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="K8S 中对 Windows 节点的利用"/></a><div class="content"><a class="title" href="/posts/49498bab/" title="K8S 中对 Windows 节点的利用">K8S 中对 Windows 节点的利用</a><time datetime="2023-12-19T07:00:00.000Z" title="发表于 2023-12-19 15:00:00">2023-12-19</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s2.loli.net/2025/08/25/6JfsmUStvOiX1Rl.png')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 808Mak1r</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'NZxAliQ2yPethAcWi3V6ZobW-MdYXbMMI',
+      appKey: 'dkE8SQ4Ucif6NRH0TGxXfmM9',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script type='text/javascript' src='/js/baidupush.js'></script></div></body></html>
