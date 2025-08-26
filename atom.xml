@@ -6,7 +6,7 @@
   <link href="https://808mak1r.com/atom.xml" rel="self"/>
   
   <link href="https://808mak1r.com/"/>
-  <updated>2025-08-25T06:50:04.750Z</updated>
+  <updated>2025-08-25T06:51:12.848Z</updated>
   <id>https://808mak1r.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://808mak1r.com/posts/5426390e/"/>
     <id>https://808mak1r.com/posts/5426390e/</id>
     <published>2025-03-31T04:30:00.000Z</published>
-    <updated>2025-08-25T06:50:04.750Z</updated>
+    <updated>2025-08-25T06:51:12.848Z</updated>
     
     
     <summary type="html">ingress-nginx 准入控制器风险</summary>
@@ -39,20 +39,20 @@
     
     <category term="云原生" scheme="https://808mak1r.com/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
     
+    <category term="横向" scheme="https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/"/>
+    
     <category term="后渗透" scheme="https://808mak1r.com/tags/%E5%90%8E%E6%B8%97%E9%80%8F/"/>
     
     <category term="持久化" scheme="https://808mak1r.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
     
-    <category term="横向" scheme="https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/"/>
-    
   </entry>
   
   <entry>
-    <title>SSH 流量解密</title>
+    <title>HTTPS 流量解密</title>
     <link href="https://808mak1r.com/posts/8775d4de/"/>
     <id>https://808mak1r.com/posts/8775d4de/</id>
     <published>2025-03-25T04:30:00.000Z</published>
-    <updated>2025-08-25T06:49:56.767Z</updated>
+    <updated>2025-08-26T05:16:13.461Z</updated>
     
     
     <summary type="html">分别针对前向加密和非前向加密两种情况完成 HTTPS 流量解密</summary>
@@ -62,9 +62,9 @@
     <category term="网络" scheme="https://808mak1r.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-    <category term="HTTPS" scheme="https://808mak1r.com/tags/HTTPS/"/>
-    
     <category term="流量解密" scheme="https://808mak1r.com/tags/%E6%B5%81%E9%87%8F%E8%A7%A3%E5%AF%86/"/>
+    
+    <category term="HTTPS" scheme="https://808mak1r.com/tags/HTTPS/"/>
     
   </entry>
   
@@ -73,7 +73,7 @@
     <link href="https://808mak1r.com/posts/8775d4de/"/>
     <id>https://808mak1r.com/posts/8775d4de/</id>
     <published>2025-03-17T04:30:00.000Z</published>
-    <updated>2025-08-25T06:24:19.411Z</updated>
+    <updated>2025-08-25T06:51:12.845Z</updated>
     
     
     <summary type="html">通对 SSH 进程内存抓取解密因子完成 SSH 流量解密</summary>
@@ -83,9 +83,9 @@
     <category term="网络" scheme="https://808mak1r.com/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-    <category term="流量解密" scheme="https://808mak1r.com/tags/%E6%B5%81%E9%87%8F%E8%A7%A3%E5%AF%86/"/>
-    
     <category term="SSH" scheme="https://808mak1r.com/tags/SSH/"/>
+    
+    <category term="流量解密" scheme="https://808mak1r.com/tags/%E6%B5%81%E9%87%8F%E8%A7%A3%E5%AF%86/"/>
     
   </entry>
   
@@ -237,11 +237,11 @@
     
     <category term="云原生" scheme="https://808mak1r.com/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/"/>
     
+    <category term="横向" scheme="https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/"/>
+    
     <category term="后渗透" scheme="https://808mak1r.com/tags/%E5%90%8E%E6%B8%97%E9%80%8F/"/>
     
     <category term="持久化" scheme="https://808mak1r.com/tags/%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    
-    <category term="横向" scheme="https://808mak1r.com/tags/%E6%A8%AA%E5%90%91/"/>
     
   </entry>
   
